@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SADC-ASCL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body> 
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="overlay">
+            <div class="hero-content">
+                <h1 data-i18n="mediatheque">Médiathèque</h1>
+                <p data-i18n="hero-subtitle">Le hub du droit communautaire africain</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="#">SADC-ASCL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" data-i18n="accueil" href="/index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" data-i18n="apropos" href="/about.html">A propos de nous</a></li>
+                    <li class="nav-item"><a class="nav-link" data-i18n="revue" href="/revue.html">Revue</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-i18n="ressources" href="" role="button" data-bs-toggle="dropdown">Ressources</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" data-i18n="mediatheque" href="#">Médiathèque</a></li>
+                            <li><a class="dropdown-item" data-i18n="bibliotheque" href="/bibliotheque.html">Bibliothèque</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" data-i18n="blog" href="/blog.html">Blog</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" data-i18n="institutionnel" href="/institutionnel.html">Institutionnel</a></li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-i18n="evenements" href="" role="button" data-bs-toggle="dropdown">Événements</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" data-i18n="evenements-permanents" href="/evenements-permanents.html">Permanents</a></li>
+                            <li><a class="dropdown-item" data-i18n="evenements-occasionnels" href="/evenements-occasionnels.html">Occasionnels</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-i18n="initiatives" href="" role="button" data-bs-toggle="dropdown">Initiatives</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" data-i18n="projets" href="/projets.html">Projets</a></li>
+                            <li><a class="dropdown-item" data-i18n="formations" href="/formations.html">Formations</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-i18n="communaute" href="" role="button" data-bs-toggle="dropdown">Communauté</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" data-i18n="adhesion" href="/adhesion.html">Adhésion</a></li>
+                            <li><a class="dropdown-item" data-i18n="galerie-communautaristes" href="/intervenants.html">Galerie des communautaristes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" data-i18n="contact" href="/contact.html">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-i18n="langue" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown">🌐Langue</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('fr')">Français</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('sw')">Swahili</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('ar')">العربية</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Médiathèque -->
+    <section id="mediatheque" class="py-5 mediatheque-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="mediatheque-title">Médiathèque</h2>
+                <p class="section-subtitle" data-i18n="mediatheque-subtitle">Conférences, panels et interviews</p>
+            </div>
+
+            <div class="row">
+                <!-- Vidéo 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video1-title">Colloque de la SADC – Panel 3 (13 décembre 2025)</h5>
+                            <!-- <p class="card-text" data-i18n="mediatheque-video1-summary">Résumé court de la conférence.</p> -->
+                            <p class="card-meta" data-i18n="mediatheque-video1-duration">Durée : 02h53</p>
+                            <a href="https://www.youtube.com/live/DxWmZ6jyuDQ?si=tzKCaST_6LSvGcA1" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video2-title">Colloque de la SADC – Panel 2 (12 décembre 2025)</h5>
+                            <!-- <p class="card-text" data-i18n="mediatheque-video2-summary">Résumé court de la conférence.</p> -->
+                            <p class="card-meta" data-i18n="mediatheque-video2-duration">Durée : 02h47</p>
+                            <a href="https://www.youtube.com/live/-2IU2ZiYaY0?si=SwjMTvfWTmywHngA" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video3-title">Colloque de la SADC – Panel 1 (12 décembre 2025)</h5>
+                            <!-- <p class="card-text" data-i18n="mediatheque-video3-summary">Résumé court de la conférence.</p> -->
+                            <p class="card-meta" data-i18n="mediatheque-video3-duration">Durée : 04h02</p>
+                            <a href="https://www.youtube.com/watch?v=m-b2nUVpsqo" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video4-title">Le Maroc et l'Afrique : stratégie d'influence, soft power et nation branding</h5>
+                            <!-- <p class="card-text" data-i18n="mediatheque-video4-summary">Résumé court de la conférence.</p> -->
+                            <p class="card-meta" data-i18n="mediatheque-video4-duration">Durée : 38min39</p>
+                            <a href="https://youtu.be/sVL2xNHkgtE?si=1ZOC57vHmFNW7D8f" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video5-title">La Coupe d'Afrique des Nations au coeur de l'intégration africaine</h5>
+                            <!-- <p class="card-text" data-i18n="mediatheque-video5-summary"></p> -->
+                            <p class="card-meta" data-i18n="mediatheque-video5-duration">Durée : 05:39:27</p>
+                            <a href="https://youtu.be/0nL3eB4y08g?si=NrfQxcZ3TN51eYRj" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video6-title">La Coupe d'Afrique des Nations au coeur de l'intégration africaine</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video6-duration">Durée : 05:39:27</p>
+                            <a href="https://youtu.be/0nL3eB4y08g?si=NrfQxcZ3TN51eYRj" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 7 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video7-title">COI 8 - Intra-African migration and the African integration</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video7-duration">Durée : 01:57:38</p>
+                            <a href="https://youtu.be/XJwq7rRU9zA?si=lNQrEBFIs7_4mQ9X" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 8 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video8-title">COI 7 Les systèmes de paiement africains</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video8-duration">Durée : 01:22:29</p>
+                            <a href="https://youtu.be/YTN12AmKr2U?si=aIcsYPdOJero1GIJ" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 9 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video9-title">Le défi de l'intégration inter-institutionnelle du continent africain - COI 5 by ASCL</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video9-duration">Durée : 01:37:29</p>
+                            <a href="https://youtu.be/VMsRCw9klvI?si=8najDJPWe7Kv6kvE" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 10 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video10-title">Fragmentations sahéliennes et désintégration continentale - 10 Mai 2025</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video10-duration">Durée : 02:05:20</p>
+                            <a href="https://youtu.be/MkL4R-BWQxw?si=jv5eCsbIyBhbLAXg" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 11 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video11-title">Les défis de l'harmonisation du droit des affaires en Afrique australe et orientale</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video11-duration">Durée : 01:57:48</p>
+                            <a href="https://youtu.be/JomQRhlxX7E?si=htvo_nW8k8mxtxby" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 12 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video12-title">Enjeux de la libre circulation des personnes dans l'espace CEMAC droits fondamentaux, citoyenneté</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video12-duration">Durée : 02:36:48</p>
+                            <a href="https://youtu.be/EpB854tBVfQ?si=2yEX_0uYXZlCbcey" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 13 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video13-title">Table sur le thème : Commande publique et intégration régionale en Afrique.</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video13-duration">Durée : 07:11</p>
+                            <a href="https://youtu.be/ye4kKk8mPxg?si=c22KA8wVYN3ZdzSL" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 14 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video14-title">Signature de la convention de partenariat entre la SADC et l'APCPA.</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video14-duration">Durée : 09:07</p>
+                            <a href="https://youtu.be/TP5YM9pr5DA?si=kknB4bRf7Qphg3q9" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 15 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video15-title">3 La réalisation questionnée du droit communautaire en Afrique</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video15-duration">Durée : 02:57:53</p>
+                            <a href="https://youtu.be/CcibTHhvMqE?si=OGc03WgFDYoLu306" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 16 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video16-title">2 La structuration entamée du droit communautaire en Afrique</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video16-duration">Durée : 01:37:56</p>
+                            <a href="https://youtu.be/SOqEo08MU0A?si=CtUZ2OK_psC0YlBs" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 17 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video17-title">1 L’affirmation recherchée du droit communautaire en Afrique</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video17-duration">Durée : 03:06:41</p>
+                            <a href="https://youtu.be/xTl_8_RvmlM?si=YDlDjCvyr4a1ydb9" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 18 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video18-title">Rationalisation des Communautés Economiques Régionales et efficacité des projets d'intégration</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video18-duration">Durée : 01:09:40</p>
+                            <a href="https://youtu.be/xTl_8_RvmlM?si=YDlDjCvyr4a1ydb9" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 19 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video19-title">LA LIBRE CIRCULATION A L'EPREUVE DE LA ZLECAF</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video19-duration">Durée : 01:31:54</p>
+                            <a href="https://youtu.be/dbx2VXgjEag?si=rf7X7KseYBUdxBs8" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vidéo 20 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100">
+                        <div class="video-container">
+                            <img src="./assets/Logo de la SADC.png" alt="Miniature conférence" class="img-fluid rounded futuristic-thumbnail">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="mediatheque-video20-title">Colloque de la SADC - Panel 4: La ZLECAf face aux enjeux du siècle</h5>
+                            <p class="card-meta" data-i18n="mediatheque-video20-duration">Durée : 03:02:55</p>
+                            <a href="https://www.youtube.com/live/nVMKTopflxw?si=T9-ScaPKB97oEbgX" target="_blank" class="btn btn-custom" data-i18n="mediatheque-watch">Voir sur YouTube</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Colonne 2 : Coordonnées -->
+                <div class="footer-col">
+                    <h5 data-i18n="footer-coordonnees-title">Coordonnées</h5>
+                    <p data-i18n="footer-address">Siège : Douala-Akwa, Immeuble Ancien PMUC</p>
+                    <p data-i18n="">Email : <a href="mailto:bouyayachen.sanae@sadc-ascl.com" class="lien">contact-1@sadc-ascl.com</a></p>
+                    <p data-i18n="">Email : <a href="mailto:amougou466@sadc-ascl.com" class="lien">contact-2@sadc-ascl.com</a></p>
+                    <p data-i18n="footer-phone">Téléphone : +237 654 807 793</p>
+                </div>
+
+                <!-- Colonne 3 : Liens rapides -->
+                <div class="footer-col">
+                    <h5 data-i18n="footer-links-title">Liens rapides</h5>
+                    <ul>
+                        <li><a href="#presentation" data-i18n="footer-link-presentation">Présentation</a></li>
+                        <li><a href="#textes-fondateurs" data-i18n="footer-link-textes">Textes fondateurs</a></li>
+                        <li><a href="#organisation" data-i18n="footer-link-organisation">Organisation</a></li>
+                        <li><a href="#recherche-revue" data-i18n="footer-link-recherche">Recherche & Revue</a></li>
+                        <li><a href="#adhesion" data-i18n="footer-link-adhesion">Adhésion</a></li>
+                        <li><a href="#partenariats" data-i18n="footer-link-partenariats">Partenariats</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 4 : Réseaux sociaux -->
+                <div class="col-md-4 text-center d-flex flex-column justify-content-center">
+                    <h5 class="mb-4 text-white" data-i18n="contact-social-title">Suivez-nous</h5>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/sadc-ascl-african-society-of-community-law-3615ab246?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://youtube.com/@sadc-asclofficiel4749?si=rAg_fDlu4c8XxcBp" target="_blank" class="social-link"><i class="bi bi-youtube"></i></a>
+                        <a href="" target="_blank" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="" target="_blank" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1AuuCuqL3t/" target="_blank" class="social-link"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bas de page -->
+        <div class="footer-bottom text-center mt-4">
+            <p data-i18n="footer-bottom">&copy; 2026 SADC-ASCL. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+
+</body>
+</html>

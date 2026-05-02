@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SADC-ASCL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        .partner-card {
+            display: inline-block;
+            margin: 15px;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            color: gold;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+        }
+
+        .partner-card:hover {
+            background-color: gold;
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        .partners-logos {
+            gap: 20px;
+        }
+    </style>
+</head>
+<body> 
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="overlay">
+            <div class="hero-content">
+                <h1 data-i18n="apropos">A propos de nous</h1>
+                <p data-i18n="hero-subtitle">Le hub du droit communautaire africain</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand logo" href="#">SADC-ASCL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" data-i18n="accueil" href="/index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" data-i18n="apropos" href="#">A propos de nous</a></li>
+                    <li class="nav-item"><a class="nav-link" data-i18n="revue" href="/revue.html">Revue</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-i18n="ressources" href="" role="button" data-bs-toggle="dropdown">Ressources</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" data-i18n="mediatheque" href="/mediatheque.html">Médiathèque</a></li>
+                            <li><a class="dropdown-item" data-i18n="bibliotheque" href="/bibliotheque.html">Bibliothèque</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" data-i18n="blog" href="/blog.html">Blog</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-i18n="evenements" href="" role="button" data-bs-toggle="dropdown">Événements</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" data-i18n="evenements-permanents" href="/evenements-permanents.html">Permanents</a></li>
+                            <li><a class="dropdown-item" data-i18n="evenements-occasionnels" href="/evenements-occasionnels.html">Occasionnels</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-i18n="initiatives" href="" role="button" data-bs-toggle="dropdown">Initiatives</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" data-i18n="projets" href="/projets.html">Projets</a></li>
+                            <li><a class="dropdown-item" data-i18n="formations" href="/formations.html">Formations</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-i18n="communaute" href="" role="button" data-bs-toggle="dropdown">Communauté</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" data-i18n="adhesion" href="/adhesion.html">Adhésion</a></li>
+                            <li><a class="dropdown-item" data-i18n="galerie-communautaristes" href="/intervenants.html">Galerie des communautaristes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" data-i18n="contact" href="/contact.html">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-i18n="langue" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown">🌐Langue</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('fr')">Français</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('sw')">Swahili</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('ar')">العربية</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Présentation -->
+    <section id="presentation" class="py-5 about-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="presentation-title">Présentation</h2>
+                <p class="section-subtitle" data-i18n="presentation-subtitle">
+                    La Société Africaine de Droit Communautaire (SADC-ASCL) est une association académique et scientifique,
+                    créée en République du Cameroun par récépissé préfectoral n° 323/2022/RDA/C19/SAAJP du 08 juin 2022.
+                    Elle est à but non lucratif, apolitique et ouverte à tous sans distinction.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 data-i18n="mission-title" class="color">Notre mission</h3>
+                    <p data-i18n="mission-text">
+                        Promouvoir le droit communautaire africain, la recherche académique et le dialogue scientifique
+                        sur l'intégration africaine.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h3 data-i18n="vision-title" class="color">Notre vision</h3>
+                    <p data-i18n="vision-text">
+                        Construire un espace académique innovant, multilingue et inclusif, au service des chercheurs,
+                        praticiens et institutions africaines.
+                    </p>
+                </div>
+            </div>
+            <div class="about-values mt-4">
+                <div class="value-card">
+                    <h5 data-i18n="valeur1-title">Innovation</h5>
+                    <p data-i18n="valeur1-text">Intégrer des solutions numériques futuristes pour transformer la recherche.</p>
+                </div>
+                <div class="value-card">
+                    <h5 data-i18n="valeur2-title">Collaboration</h5>
+                    <p data-i18n="valeur2-text">Favoriser les partenariats académiques et institutionnels.</p>
+                </div>
+                <div class="value-card">
+                    <h5 data-i18n="valeur3-title">Diversité linguistique</h5>
+                    <p data-i18n="valeur3-text">Rendre nos contenus accessibles en plusieurs langues.</p>
+                </div>
+                <div class="value-card">
+                    <h5 data-i18n="valeur4-title">Impact social</h5>
+                    <p data-i18n="valeur4-text">Contribuer à une gouvernance durable et inclusive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Textes fondateurs -->
+    <section id="textes-fondateurs" class="py-5 about-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="textes-fondateurs-title">Textes fondateurs</h2>
+                <p class="section-subtitle" data-i18n="textes-fondateurs-subtitle">
+                    Découvrez les documents qui définissent notre cadre juridique et institutionnel.
+                </p>
+                <h6 class="italique" data-i18n="textes-fondateurs-click">cliquez pour télécharger</h6>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="/Docs/Statuts de la SADC - Amendés 2025.pdf" class="lien" data-i18n="statuts-fr">Statuts de la SADC (Fr)</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/Docs/Statute of the ASCL - Amended 2025.pdf" class="lien" data-i18n="statuts-en">Statuts de la SADC (Eng)</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/Docs/Règlement Intérieur de la SADC - Amendés 2025.pdf" class="lien" data-i18n="reglement-fr">Règlement intérieur</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/Docs/Internal Rules and Regulations of the ASCL - Amended 2025.pdf" class="lien" data-i18n="reglement-en">Internal Rules and Regulations of the ASCL - Amended 2025</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="/Docs/AFCFTA~1.pdf" class="lien" data-i18n="afcfta">AFCFTA</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Fondateurs -->
+    <section id="fondateurs" class="py-5 about-section">  
+        <div class="container">  
+            <div class="text-center mb-5">  
+                <h2 class="section-title" data-i18n="fondateurs_title">Fondateurs</h2>
+            </div>            
+            <div class="row">
+
+                <!-- NKILI -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">    
+                        <img src="./assets/presi_pascal.jpg" alt="Photo Eugène Pascal Parfait NKILI MBIDA"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Eugène NKILI MBIDA</h5>
+                            <p class="card-text" data-i18n="president-fondateur">Président Fondateur</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioNkiliFond" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ELLA -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/img_ELLA.jpg" alt="Photo Arsène Chinois ELLA NTOU'OU"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Arsène Chinois ELLA NTOU'OU </h5>
+                            <p class="card-text" data-i18n="membre-fondateur">Membre Fondateur - SADC</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioEllaFond" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FALL -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/image_FALL.png" alt="Photo Moustapha FALL"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Moustapha FALL</h5>
+                            <p class="card-text" data-i18n="membre-fondateur">Membre Fondateur - SADC</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioFallFond" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOUOH -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/image_KOUOH.png" alt="Photo KOUOH MOUANDJO Alain-Roland"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">KOUOH MOUANDJO Alain-Roland</h5>
+                            <p class="card-text" data-i18n="membre-fondateur">Membre Fondateur - SADC</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioKouohFond" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EKO -->
+                <!-- CHANGEMENT : "Trésorier" → "Membre Fondateur" sur la carte -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/treso_sadc_eko.jpg" alt="Photo EKO MENGUE Arsène Silvère"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">EKO MENGUE Arsène Silvère</h5>
+                            <p class="card-text" data-i18n="membre-fondateur">Membre Fondateur - SADC</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioEkoFond" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GUIRAO -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/image_GUIRAO.png" alt="Photo GUIRAO Roland"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">GUIRAO Roland</h5>
+                            <p class="card-text" data-i18n="membre-fondateur">Membre Fondateur - SADC</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioGuiraoFond" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Modales Section Fondateurs (IDs distincts avec suffixe Fond) -->
+    <!-- ============================================================ -->
+
+    <!-- Modale NKILI - Fondateurs -->
+    <div class="modal fade" id="bioNkiliFond" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-i18n=""> Eugène NKILI MBIDA</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="poste_president"> Président Fondateur - SADC │ Magistrat │ Arbitre │ Ph.D en Droit public</p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email : adresse professionnelle pour membre du bureau -->
+                        <a href="mailto:dipasquale92@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/eugène-nkili-74a1441a6?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/Bio_NKILI.pdf" class="lien">
+                            <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>    
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale ELLA - Fondateurs -->
+    <div class="modal fade" id="bioEllaFond" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title"><strong data-i18n="nom">Nom :</strong> Arsène Chinois ELLA NTOU'OU </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="poste_ella">
+                        Docteur/PhD en droit public. <br>
+                        Chargé de cours au Département de droit public international et communautaire de 
+                        la Faculté des Sciences Juridique et Politiques de l'Université de Yaoundé II. <br>
+                        Directeur des Affaires Académiques et de la Coopération à l'Université Multinationale 
+                        d'Ambam (UMA).
+                    </p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email : adresse professionnelle pour membre du bureau -->
+                        <a href="mailto:ellachinois@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/arsène-chinois-ella-ntou-ou-76b087309?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/bio_ELLA.pdf">
+                            <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>
+                        </a>                    
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Moustapha FALL - Fondateurs -->
+    <div class="modal fade" id="bioFallFond" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title"><strong data-i18n="nom">Nom :</strong> Moustapha FALL</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="membre-fondateur"> Membre Fondateur - SADC</p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <a href="mailto:" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/dr-moustapha-fall-a4b669138?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale KOUOH MOUANDJO Alain-Roland - Fondateurs -->
+    <div class="modal fade" id="bioKouohFond" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title"><strong data-i18n="nom">Nom :</strong> KOUOH MOUANDJO Alain-Roland</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="membre-fondateur"> Membre Fondateur - SADC</p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <a href="mailto:" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/alain-roland-kouoh-mouandjo-693896177?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale EKO MENGUE Arsène Silvère - Fondateurs -->
+    <!-- CHANGEMENT : "Trésorier" → "Membre Fondateur" dans la modale -->
+    <div class="modal fade" id="bioEkoFond" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title"><strong data-i18n="nom">Nom :</strong> EKO MENGUE Arsène Silvère</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="membre-fondateur"><strong data-i18n="titre">Titre :</strong> Membre Fondateur - SADC</p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <a href="mailto:arsene1eko@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/ars%C3%A8ne-eko-mengue-1627b14b?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/Bio_EKO.pdf">
+                            <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale GUIRAO Roland - Fondateurs -->
+    <div class="modal fade" id="bioGuiraoFond" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-i18n=""><strong data-i18n="nom">Nom :</strong> GUIRAO Roland</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="membre-fondateur"> Membre Fondateur - SADC</p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <a href="mailto:" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/roland-guirao-0b5a288b?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bureau Exécutif -->
+    <section id="bureau-executif" class="py-5 about-section">  
+        <div class="container">  
+            <div class="text-center mb-5">  
+                <h2 class="section-title" data-i18n="bureau_title">Bureau Exécutif</h2>
+            </div>            
+            <div class="row">
+
+                <!-- NKILI -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">    
+                        <img src="./assets/presi_pascal.jpg" alt="Photo Eugène Pascal Parfait NKILI MBIDA"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Eugène NKILI MBIDA</h5>
+                            <p class="card-text" data-i18n="bureau_nkili_poste">Président - SADC</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioNkili" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alyae EL BIED -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/vp_sadc_alyae.jpg" alt="Photo ALYAE EL BIED"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Alyae EL BIED</h5>
+                            <p class="card-text" data-i18n="bureau_bied_poste">Vice-Présidente - SADC (Nord)</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioBied" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Priscah NYOTAH -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/Dr Nyotah.png" alt="Photo Priscah NYOTAH"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Priscah NYOTAH</h5>
+                            <p class="card-text" data-i18n="bureau_priscah_poste">Vice-Présidente - SADC (Est)</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioPriscah" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ilo Allaye DIALL -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/illo_diall.jpg" alt="Photo Ilo Allaye DIALL"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Ilo Allaye DIALL</h5>
+                            <p class="card-text" data-i18n="bureau_diall_poste">Vice-Président - SADC (Ouest)</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioDiall" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arsène Chinois ELLA NTOU'OU -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/img_ELLA.jpg" alt="Photo Arsène Chinois ELLA NTOU'OU"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Arsène Chinois ELLA NTOU'OU</h5>
+                            <p class="card-text" data-i18n="bureau_ella_poste">Vice-Président - SADC (Centre)</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioEllaBureau" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sanae BOUYAYACHEN -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/sg_sadc_sanae.jpg" alt="Photo Sanae"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Sanae BOUYAYACHEN</h5>
+                            <p class="card-text" data-i18n="bureau_sanae_poste">Secrétaire Générale - SADC</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioSanae" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fabrice AMOUGOU MBARGA -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/sga_sadc_amougou.jpeg" alt="Photo Amougou"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Fabrice AMOUGOU MBARGA</h5>
+                            <p class="card-text" data-i18n="bureau_amougou_poste">Secrétaire Général Adjoint - SADC</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioAmougou" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EKO MENGUE Arsène Silvère -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/treso_sadc_eko.jpg" alt="Photo EKO MENGUE Arsène Silvère"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">EKO MENGUE Arsène Silvère</h5>
+                            <p class="card-text" data-i18n="tresorier">Trésorier - SADC</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioEko" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yusuf ABDALLAH SHIKANDA -->
+                <div class="col-md-4 mb-4">
+                    <div class="card futuristic-card h-100 text-center">
+                        <img src="./assets/adviser_sadc_yusuf.jpg" alt="Photo Yusuf"
+                        class="img-fluid rounded-circle mx-auto mt-3 futuristic-thumbnail"
+                        style="width:150px; height:150px;">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="">Yusuf ABDALLAH SHIKANDA</h5>
+                            <p class="card-text" data-i18n="conseiller">Conseiller - SADC</p>
+                            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#bioYusuf" data-i18n="voir_plus">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ============================================================ -->
+    <!-- Modales Bureau Exécutif                                      -->
+    <!-- ============================================================ -->
+
+    <!-- Modale Eugène NKILI MBIDA - Bureau -->
+    <div class="modal fade" id="bioNkili" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title"><strong data-i18n="nom">Nom :</strong> Eugène NKILI MBIDA</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="bureau_nkili_poste"> Président - SADC │ Magistrat │ Arbitre │ Ph.D en Droit public</p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email professionnel pour membre du bureau -->
+                        <a href="mailto:dipasquale92@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/eugène-nkili-74a1441a6?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/Bio_NKILI.pdf" class="lien">
+                            <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>    
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modale Alyae EL BIED - Bureau -->
+    <div class="modal fade" id="bioBied" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-i18n="bureau_bied_nom">
+                        <strong data-i18n="label_nom">Nom :</strong> Alyae EL BIED
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="bureau_bied_poste">
+                        Vice-Présidente - SADC
+                    </p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email professionnel pour membre du bureau -->
+                        <a href="mailto:elbiedalyae@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/alyae-el-bied-9733ab252?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <a href="/Docs/Dossiers membres/bio_ELBIED.pdf" class="lien">
+                        <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>    
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Priscah NYOTAH - Bureau -->
+    <div class="modal fade" id="bioPriscah" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-i18n="bureau_priscah_nom">
+                        <strong data-i18n="label_nom">Nom :</strong> Priscah NYOTAH
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="bureau_priscah_poste">
+                         Vice-Présidente - SADC (Est)
+                    </p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email professionnel pour membre du bureau -->
+                        <a href="mailto:wamuciinyotah@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/priscah-nyotah-3155761a?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/bio_NYOTAH.pdf">
+                            <button class="btn btn-custom" data-i18n="voir_bio">Voir ma bio</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Ilo Allaye DIALL - Bureau -->
+    <div class="modal fade" id="bioDiall" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-i18n="bureau_diall_nom">
+                        <strong data-i18n="label_nom">Nom :</strong> Ilo Allaye DIALL
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="bureau_diall_poste">
+                        Vice-Président - SADC (Ouest)
+                    </p>
+                    <h6 data-i18n="label_reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email professionnel pour membre du bureau -->
+                        <a href="mailto:ilodiall@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/bio_DIALL.pdf" class="lien">
+                            <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>    
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Arsène Chinois ELLA NTOU'OU - Bureau -->
+    <div class="modal fade" id="bioEllaBureau" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title"><strong data-i18n="nom">Nom :</strong> Arsène Chinois ELLA NTOU'OU </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="poste_ella">Membre Fondateur - SADC. <br> 
+                        Docteur/PhD en droit public. <br>
+                        Chargé de cours au Département de droit public international et communautaire de 
+                        la Faculté des Sciences Juridique et Politiques de l'Université de Yaoundé II. <br>
+                        Directeur des Affaires Académiques et de la Coopération à l'Université Multinationale 
+                        d'Ambam (UMA).
+                    </p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email professionnel pour membre du bureau -->
+                        <a href="mailto: ellachinois@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/arsène-chinois-ella-ntou-ou-76b087309?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/bio_ELLA.pdf">
+                            <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>
+                        </a>                    
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Sanae BOUYAYACHEN - Bureau -->
+    <div class="modal fade" id="bioSanae" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-i18n="bureau_sanae_nom">
+                        <strong data-i18n="label_nom">Nom :</strong> Sanae BOUYAYACHEN
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="bureau_sanae_poste">
+                        <strong data-i18n="label_titre">Titre : Secrétaire Générale - SADC</strong> 
+                    </p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email professionnel pour membre du bureau -->
+                        <a href="mailto:bouyayachen.sanae@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/sanae-bouyayachen-314a93231?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/bio_SANAE.pdf" class="lien">
+                            <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>    
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Fabrice AMOUGOU MBARGA - Bureau -->
+    <div class="modal fade" id="bioAmougou" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-i18n="bureau_amougou_nom">
+                        <strong data-i18n="label_nom">Nom :</strong> Fabrice AMOUGOU MBARGA
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="bureau_amougou_poste">
+                        <strong data-i18n="label_titre">Titre :</strong> Secrétaire Général Adjoint - SADC
+                    </p>
+                    <h6 data-i18n="label_reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email professionnel pour membre du bureau -->
+                        <a href="mailto:amougou466@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/fabrice-amougou-mbarga-780200b2?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/bio_AMOUGOU.pdf">
+                            <button class="btn btn-custom" data-i18n="voir_bio">Voir ma bio</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale EKO MENGUE Arsène Silvère - Bureau -->
+    <div class="modal fade" id="bioEko" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title"><strong data-i18n="nom">Nom :</strong> EKO MENGUE Arsène Silvère</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="tresorier"><strong data-i18n="titre">Titre :</strong> Trésorier - SADC</p>
+                    <h6 data-i18n="reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email professionnel pour membre du bureau -->
+                        <a href="mailto:arsene1eko@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/ars%C3%A8ne-eko-mengue-1627b14b?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/Bio_EKO.pdf">
+                            <button class="btn btn-custom" data-i18n="voir-bio">Voir ma bio</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modale Yusuf ABDALLAH SHIKANDA - Bureau -->
+    <div class="modal fade" id="bioYusuf" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content futuristic-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-i18n="bureau_yusuf_nom">
+                        <strong data-i18n="label_nom">Nom :</strong> Yusuf ABDALLAH SHIKANDA
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p data-i18n="bureau_yusuf_poste">
+                        <strong data-i18n="label_titre">Titre :</strong> Conseiller - SADC
+                    </p>
+                    <h6 data-i18n="label_reseaux">Réseaux sociaux :</h6>
+                    <div class="social-icons">
+                        <!-- Email professionnel pour membre du bureau -->
+                        <a href="mailto:shaqattorney@sadc-ascl.com" class="social-link"><i class="bi bi-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/yusuf-shikanda-01160a191?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="/Docs/Dossiers membres/bio_YUSUF.pdf">
+                            <button class="btn btn-custom" data-i18n="voir_bio">Voir ma bio</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal" data-i18n="fermer">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Recherche & Revue -->
+    <!-- CHANGEMENT : texte du bloc "Revue Scientifique" mis à jour -->
+    <section id="recherche-revue" class="py-5 about-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="recherche-revue-title">Recherche & Revue</h2>
+                <p class="section-subtitle" data-i18n="recherche-revue-subtitle">
+                    Nos organes académiques et scientifiques.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 data-i18n="cerdia-title">CERDIA / SRCAL</h3>
+                    <p data-i18n="cerdia-text">
+                        Centre d'Études et de Recherches en Droit de l'Intégration Africaine,
+                        créé en 2025, chargé de promouvoir la recherche et la formation en droit communautaire africain.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h3 data-i18n="revue-title">Revue Africaine de Droit Communautaire (RADC / AJCL)</h3>
+                    <p data-i18n="revue-text">
+                        Dirigée par le Président Fondateur, assisté d'un Secrétaire Technique et d'un Comité Scientifique.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Partenariats -->
+    <section id="partenariats" class="py-5 about-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-i18n="partenariats-title">Nos partenariats</h2>
+                <p class="section-subtitle" data-i18n="partenariats-subtitle">
+                    Les institutions et organisations qui nous accompagnent dans notre mission.
+                </p>
+            </div>
+
+            <div class="partners-logos d-flex justify-content-center flex-wrap">
+                <a href="https://www.cera-bf.com" target="_blank" class="partner-card" data-i18n="cera">
+                    Centre d'Etudes Régionales Africaines (CERA-BF)
+                </a>
+                <a href="https://www.linkedin.com/company/association-pour-la-promotion-de-la-commande-publique-en-afrique/" target="_blank" class="partner-card" data-i18n="apcpa">
+                    Association pour la Promotion de la Commande Publique en Afrique
+                </a>
+                <a href="https://www.irdeic.ut-capitole.fr" target="_blank" class="partner-card" data-i18n="irdeic">
+                    Institut de Recherche en Droit Européen, International et Comparé (IRDEIC)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Adhésion -->
+    <section id="adhesion" class="py-5 about-section">
+        <div class="container text-center">
+            <h2 class="section-title" data-i18n="adhesion-title">Adhésion</h2>
+            <p class="section-subtitle" data-i18n="adhesion-subtitle">
+                Les conditions d'adhésion sont définies par nos statuts et règlements. Toute demande doit être accompagnée des pièces requises.
+            </p>
+            <ul class="list-group text-start">
+                <li class="list-group-item">
+                    <h4 data-i18n="membres-actifs">Membres actifs :</h4>
+                    <ul>
+                        <li data-i18n="actifs-adhesion">Droits d'adhésion : 5.000 F CFA (7,62 €)</li>
+                        <li data-i18n="actifs-renouvellement">Renouvelables chaque année avant le 1er février</li>
+                        <li data-i18n="actifs-contribution">Contribution annuelle :</li>
+                        <ul>
+                            <li data-i18n="actifs-doctorants">30 € (19.678 F CFA) pour les doctorants</li>
+                            <li data-i18n="actifs-professionnels">65 € (42.635 F CFA) pour les professionnels</li>
+                        </ul>
+                    </ul>
+                    <span data-i18n="actifs-delai">à verser avant le 1er septembre.</span>
+                </li>
+                <li class="list-group-item">
+                    <h4 data-i18n="membres-associes">Membres associés :</h4>
+                    <ul>
+                        <li data-i18n="associes-adhesion">Droits d'adhésion annuels 40.000 F CFA (61,03 €)</li>
+                    </ul>
+                    <span data-i18n="associes-delai">à verser avant le 1er septembre.</span>
+                </li>
+                <li class="list-group-item">
+                    <h4 data-i18n="pieces-individuels">Pièces à fournir pour les membres individuels :</h4>
+                    <ul>
+                        <li data-i18n="individuels-lettre">Lettre de demande adressée au Président</li>
+                        <li data-i18n="individuels-formulaire">Formulaire dûment rempli</li>
+                        <li data-i18n="individuels-cv">CV actualisé</li>
+                        <li data-i18n="individuels-photo">Photo récente</li>
+                        <li data-i18n="individuels-paiement">Preuve du paiement</li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    <h4 data-i18n="pieces-institutionnels">Pièces à fournir pour les membres institutionnels :</h4>
+                    <ul>
+                        <li data-i18n="institutionnels-lettre">Lettre officielle signée par le représentant légal</li>
+                        <li data-i18n="institutionnels-formulaire">Formulaire dûment rempli</li>
+                        <li data-i18n="institutionnels-statuts">Copie des statuts ou acte constitutif</li>
+                        <li data-i18n="institutionnels-paiement">Preuve du paiement</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="mt-4">
+                <a href="/adhesion.html" class="btn-engagement" data-i18n="adhesion-form">Remplir le formulaire</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Colonne 2 : Coordonnées -->
+                <div class="footer-col">
+                    <h5 data-i18n="footer-coordonnees-title">Coordonnées</h5>
+                    <p data-i18n="footer-address">Siège : Douala-Akwa, Immeuble Ancien PMUC</p>
+                    <p data-i18n="">Email : <a href="mailto:bouyayachen.sanae@sadc-ascl.com" class="lien">contact-1@sadc-ascl.com</a></p>
+                    <p data-i18n="">Email : <a href="mailto:amougou466@sadc-ascl.com" class="lien">contact-2@sadc-ascl.com</a></p>
+                    <p data-i18n="footer-phone">Téléphone : +237 654 807 793</p>
+                </div>
+
+                <!-- Colonne 3 : Liens rapides -->
+                <div class="footer-col">
+                    <h5 data-i18n="footer-links-title">Liens rapides</h5>
+                    <ul>
+                        <li><a href="#presentation" data-i18n="footer-link-presentation">Présentation</a></li>
+                        <li><a href="#textes-fondateurs" data-i18n="footer-link-textes">Textes fondateurs</a></li>
+                        <li><a href="#organisation" data-i18n="footer-link-organisation">Organisation</a></li>
+                        <li><a href="#recherche-revue" data-i18n="footer-link-recherche">Recherche & Revue</a></li>
+                        <li><a href="#adhesion" data-i18n="footer-link-adhesion">Adhésion</a></li>
+                        <li><a href="#partenariats" data-i18n="footer-link-partenariats">Partenariats</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 4 : Réseaux sociaux -->
+                <div class="col-md-4 text-center d-flex flex-column justify-content-center">
+                    <h5 class="mb-4 text-white" data-i18n="contact-social-title">Suivez-nous</h5>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/sadc-ascl-african-society-of-community-law-3615ab246?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://youtube.com/@sadc-asclofficiel4749?si=rAg_fDlu4c8XxcBp" target="_blank" class="social-link"><i class="bi bi-youtube"></i></a>
+                        <a href="" target="_blank" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="" target="_blank" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1AuuCuqL3t/" target="_blank" class="social-link"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bas de page -->
+        <div class="footer-bottom text-center mt-4">
+            <p data-i18n="footer-bottom">&copy; 2026 SADC-ASCL. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+    
+</body>
+</html>
