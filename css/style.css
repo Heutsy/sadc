@@ -1,0 +1,1577 @@
+/* _______________________________________________________________________________________ */
+/*                                                                                         */
+/*                                         Footer du site                                  */
+/* _______________________________________________________________________________________ */
+
+/* Footer global */
+.footer-section {
+  background: rgba(15, 15, 25, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 50px 20px;
+  border-top: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+/* Grille */
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Colonnes */
+.footer-col h5 {
+  color: #FFD700;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.footer-col p,
+.footer-col ul li a {
+  color: #ffffff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a:hover {
+  color: #FFD700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+/* Icônes sociales */
+.social-icons a {
+  color: #FFD700;
+  font-size: 1.5rem;
+  margin-right: 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #ffffff;
+  text-shadow: 0 0 15px #FFD700;
+}
+
+/* Bas de page */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  padding-top: 15px;
+}
+
+.footer-bottom p {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Bandeau lumineux animé en bas du footer */
+.footer-bottom {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  padding-top: 15px;
+}
+
+.footer-bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -200%;
+  width: 400%;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700, #b8860b, #800000, #FFD700);
+  animation: glowing-band 8s linear infinite;
+}
+
+/* Animation du bandeau */
+@keyframes glowing-band {
+  0% { left: -200%; }
+  100% { left: 100%; }
+}
+
+/* Texte du bas de page */
+.footer-bottom p {
+  position: relative;
+  color: #aaa;
+  font-size: 0.85rem;
+  margin: 0;
+  z-index: 1;
+}
+
+
+/* ______________________________________________________________________________________ */
+/*                                                                                        */
+/*                                          ACCUEIL                                       */
+/* ______________________________________________________________________________________ */
+
+/* style.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  height: 100%;
+}
+
+.lien{
+  color: #fff;
+  text-decoration: none;
+}
+
+.color {
+  color: gold;
+}
+ 
+/* Hero Section */
+.hero {
+  background: url('../assets/bg.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6); /* effet sombre pour lisibilité */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 3em;
+  color: gold; /* couleur premium */
+  text-shadow: 0 0 15px #ffcc00;
+}
+
+p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+.buttons .btn {
+  background: #800000; /* bordeaux institutionnel */
+  color: white;
+  padding: 12px 25px;
+  margin: 10px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.buttons .btn:hover {
+  background: #ffcc00;
+  color: black;
+  box-shadow: 0 0 15px #ffcc00;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Navbar futuriste */
+.custom-navbar {
+  background: rgba(20, 0, 0, 0.6); /* effet glassmorphism */
+  backdrop-filter: blur(10px);
+  padding: 10px 30px;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: gold !important;
+  text-shadow: 0 0 10px #ffcc00;
+}
+
+/* Liens */
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 15px;
+  transition: all 0.3s ease;
+}
+
+/* Effet néon au hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #800000, #ffcc00);
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #ffcc00 !important;
+  text-shadow: 0 0 10px #ffcc00;
+  transform: translateY(-2px);
+}
+
+.navbar {
+  background: rgba(0,0,0,0.7); /* semi-transparent futuriste */
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid #ffcc00;
+}
+
+.navbar .nav-link {
+  color: #fff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00;
+}
+
+.dropdown-menu {
+  background: rgba(20,0,0,0.9);
+  border: 1px solid #ffcc00;
+}
+.dropdown-item {
+  color: #fff;
+}
+.dropdown-item:hover {
+  background: rgba(255,204,0,0.2);
+  color: #ffcc00;
+}
+
+/* Décalage du background en mode desktop */
+@media (min-width: 992px) {
+  .hero {
+    background-position: center -200px; /* décale le fond vers le bas */
+  }
+}
+
+/* Section Revue */
+.revue-section {
+  background: rgba(20, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid #ffcc00;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: gold;
+  text-shadow: 0 0 15px #ffcc00;
+}
+
+.section-subtitle {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Barre de recherche futuriste */
+.futuristic-search .form-control {
+  border-radius: 8px 0 0 8px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid #ffcc00;
+}
+
+.futuristic-search .form-control::placeholder {
+  color: #ddd;
+}
+
+.futuristic-search .btn-custom {
+  border-radius: 0 8px 8px 0;
+}
+
+/* Cartes futuristes */
+.futuristic-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.futuristic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
+}
+
+.card-title {
+  color: gold;
+  font-weight: bold;
+}
+
+.card-text {
+  color: white;
+}
+
+.card-meta {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+/* Bouton custom déjà défini */
+.btn-custom {
+  background: #800000;
+  color: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: #ffcc00;
+  color: black;
+  box-shadow: 0 0 15px #ffcc00;
+}
+
+/* Section Blog */
+.blog-section {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid #ffcc00;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: gold;
+  text-shadow: 0 0 15px #ffcc00;
+}
+
+.section-subtitle {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Cartes futuristes déjà définies */
+.futuristic-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.futuristic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
+}
+
+.card-title {
+  color: gold;
+  font-weight: bold;
+}
+
+.card-text {
+  color: white;
+}
+
+.card-meta {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+/* Section Médiathèque */
+.mediatheque-section {
+  background: rgba(20, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid #ffcc00;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* ratio 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.7);
+}
+
+/* Miniatures futuristes */
+.futuristic-thumbnail {
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  /* height: 80%; */
+}
+
+.futuristic-thumbnail:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.7);
+}
+
+/* Section Événements */
+.evenements-section {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid #ffcc00;
+}
+
+.sub-block-title {
+  font-size: 1.8rem;
+  color: #ffcc00;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #ffcc00;
+}
+
+/* Modal futuriste */
+.futuristic-modal {
+  background: rgba(30, 0, 0, 0.95); /* plus opaque */
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
+}
+
+/* Inputs futuristes */
+.futuristic-input {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid #ffcc00;
+  color: white;
+  border-radius: 8px;
+}
+
+.futuristic-input:focus {
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 0 15px #ffcc00;
+  border-color: #ffcc00;
+}
+
+/* Section Intervenants */
+.intervenants-section {
+  background: rgba(20, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid #ffcc00;
+}
+
+.futuristic-thumbnail {
+  border: 3px solid #ffcc00;
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.futuristic-thumbnail:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.7);
+}
+
+.futuristic-modal {
+  background: rgba(30, 0, 0, 0.95);
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
+  color: white;
+}
+
+.futuristic-modal .modal-header {
+  border-bottom: 1px solid #ffcc00;
+}
+
+.futuristic-modal .modal-footer {
+  border-top: 1px solid #ffcc00;
+}
+
+/* Section Thématiques */
+.thematiques-section {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid #ffcc00;
+}
+
+.thematiques-section .card-title {
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00;
+}
+
+/* Section Contact */
+.contact-section {
+  background: rgba(10, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  border-top: 2px solid #ffcc00;
+}
+
+/* Icônes réseaux sociaux */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-link {
+  font-size: 2rem;
+  color: #ffcc00;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.2);
+  color: #ffffff;
+  text-shadow: 0 0 15px #ffcc00;
+}
+
+/* _______________________________________________________________________________________ */
+/*                                                                                         */
+/*                                         A PROPOS                                        */
+/* _______________________________________________________________________________________ */
+
+/* Section À propos */
+.about-section {
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(40, 0, 60, 0.8));
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 60px 20px;
+  color: #fff;
+  border-bottom: 2px solid #ffcc00;
+  border-top: 2px solid #ffcc00;
+}
+
+/* Titres */
+.about-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFD700; /* doré */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.about-section .section-subtitle {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+/* Cartes valeurs */
+.about-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.about-values .value-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.4); /* doré transparent */
+  border-radius: 15px;
+  padding: 25px;
+  width: 250px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.about-values .value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.about-values .value-card h5 {
+  color: #FFD700;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.about-values .value-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 15px;
+  }
+  .about-section .section-title {
+    font-size: 2rem;
+  }
+  .about-values {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Section Vision */
+#vision {
+  background: linear-gradient(135deg, rgba(30, 0, 50, 0.85), rgba(10, 10, 20, 0.9));
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 60px 20px;
+  /* margin-top: 40px; */
+  border-bottom: 2px solid #ffcc00;
+}
+
+#vision .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFD700; /* doré */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+#vision .section-subtitle {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+/* Section Valeurs */
+#valeurs {
+  /* background: linear-gradient(135deg, rgba(40, 0, 60, 0.85), rgba(20, 20, 30, 0.9)); */
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(40, 0, 60, 0.8));
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 60px 20px;
+  /* margin-top: 40px; */
+}
+
+.about-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 15px;
+  padding: 25px;
+  width: 250px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.value-card h5 {
+  color: #FFD700;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.value-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-values {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Section Historique */
+#historique {
+  background: linear-gradient(135deg, rgba(30, 0, 50, 0.85), rgba(10, 10, 20, 0.9));
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 60px 20px;
+  /* margin-top: 40px; */
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 800px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #FFD700; /* ligne dorée */
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 10px;
+  padding: 15px;
+  color: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 40px;
+    text-align: left !important;
+  }
+}
+
+/* Section Partenariats */
+#partenariats {
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(40, 0, 60, 0.8));
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 60px 20px;
+  /* margin-top: 40px; */
+}
+
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.partner-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 15px;
+  padding: 20px;
+  width: 180px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+}
+
+.partner-card img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.partner-card p {
+  color: #FFD700;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .partners-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Section Équipe */
+#equipe {
+  background: linear-gradient(135deg, rgba(30, 0, 50, 0.85), rgba(10, 10, 20, 0.9));
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 60px 20px;
+  /* margin-top: 40px; */
+}
+
+/* Comités */
+.committees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.committee-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 15px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.committee-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+}
+
+.committee-card h3 {
+  color: #FFD700;
+  margin-bottom: 15px;
+}
+
+.committee-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.committee-card li {
+  color: #e0e0e0;
+  margin: 8px 0;
+}
+
+/* Intervenants */
+.intervenants-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.intervenant-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 15px;
+  padding: 15px;
+  width: 180px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.intervenant-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3);
+}
+
+.intervenant-card img {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.intervenant-card p {
+  color: #FFD700;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .committees, .intervenants-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Section Engagement */
+#engagement {
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(40, 0, 60, 0.8));
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 60px 20px;
+  /* margin-top: 40px; */
+}
+
+.engagement-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-engagement {
+  background: linear-gradient(135deg, #FFD700, #b8860b);
+  color: #0a0a1a;
+  font-weight: 700;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-engagement:hover {
+  background: linear-gradient(135deg, #b8860b, #FFD700);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Section Textes fondateurs */
+#textes-fondateurs {
+  background: linear-gradient(135deg, rgba(25, 25, 35, 0.9), rgba(50, 0, 70, 0.85));
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 60px 20px;
+  /* margin-bottom: 40px; */
+  border-top: 2px solid #FFD700;
+  border-bottom: 2px solid #FFD700;
+}
+
+/* Titres */
+#textes-fondateurs .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFD700; /* doré */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+#textes-fondateurs .section-subtitle {
+  font-size: 1.2rem;
+  color: #FFD700; /* doré */
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  font-weight: 500;
+}
+
+/* Liste des documents */
+#textes-fondateurs .list-group {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#textes-fondateurs .list-group-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  color: #ffffff; /* texte blanc */
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#textes-fondateurs .list-group-item:hover {
+  background: rgba(255, 215, 0, 0.15);
+  color: #FFD700; /* doré au hover */
+  transform: translateX(5px);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
+}
+
+/* Section Organisation */
+#organisation {
+  background: linear-gradient(135deg, rgba(25, 25, 35, 0.9), rgba(50, 0, 70, 0.85));
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 60px 20px;
+  /* margin-bottom: 40px; */
+  border-top: 2px solid #FFD700;
+  border-bottom: 2px solid #FFD700;
+}
+
+/* Titres */
+#organisation .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFD700; /* doré */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+#organisation .section-subtitle {
+  font-size: 1.2rem;
+  color: #FFD700; /* doré */
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  font-weight: 500;
+}
+
+/* Cartes organisation */
+#organisation .committees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+#organisation .committee-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+#organisation .committee-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Titres des cartes */
+#organisation .committee-card h3 {
+  color: #FFD700;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+/* Texte des cartes */
+#organisation .committee-card p,
+#organisation .committee-card li {
+  color: #ffffff; /* blanc */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Liste interne */
+#organisation .committee-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+#organisation .committee-card li::before {
+  content: "• ";
+  color: #FFD700;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #organisation .committees {
+    flex-direction: column;
+    align-items: center;
+  }
+  #organisation .committee-card {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* Section Recherche & Revue */
+#recherche-revue {
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(40, 0, 60, 0.85));
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 60px 20px;
+  /* margin-bottom: 40px; */
+  border-top: 2px solid #FFD700;
+  border-bottom: 2px solid #FFD700;
+}
+
+/* Titres */
+#recherche-revue .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFD700; /* doré */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+#recherche-revue .section-subtitle {
+  font-size: 1.2rem;
+  color: #FFD700; /* doré */
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  font-weight: 500;
+}
+
+/* Colonnes */
+#recherche-revue .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+#recherche-revue .col-md-6 {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 15px;
+  padding: 25px;
+  flex: 1 1 45%;
+  min-width: 280px;
+  transition: all 0.3s ease;
+}
+
+#recherche-revue .col-md-6:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* Titres internes */
+#recherche-revue h3 {
+  color: #FFD700;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+/* Texte interne */
+#recherche-revue p {
+  color: #ffffff; /* blanc */
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #recherche-revue .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  #recherche-revue .col-md-6 {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+/* _______________________________________________________________________________________ */
+/*                                                                                         */
+/*                                         ADHESION                                        */
+/* _______________________________________________________________________________________ */
+
+/* Section Adhésion */
+#adhesion {
+  background: linear-gradient(135deg, rgba(25, 25, 35, 0.9), rgba(50, 0, 70, 0.85));
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 60px 20px;
+  /* margin-bottom: 40px; */
+  border-top: 2px solid #FFD700;
+  border-bottom: 2px solid #FFD700;
+}
+
+/* Titres */
+#adhesion .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #FFD700; /* doré */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+#adhesion .section-subtitle {
+  font-size: 1.2rem;
+  color: #FFD700; /* doré */
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  font-weight: 500;
+}
+
+/* Liste des conditions */
+#adhesion .list-group {
+  max-width: 400px;
+  margin: 0 auto 30px auto;
+}
+
+#adhesion .list-group-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  color: #ffffff; /* blanc */
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+#adhesion .list-group-item:hover {
+  background: rgba(255, 215, 0, 0.15);
+  color: #FFD700; /* doré au hover */
+  transform: translateX(5px);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Boutons */
+#adhesion .btn-engagement {
+  background: linear-gradient(135deg, #FFD700, #b8860b);
+  color: #0a0a1a;
+  font-weight: 700;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin: 10px;
+}
+
+#adhesion .btn-engagement:hover {
+  background: linear-gradient(135deg, #b8860b, #FFD700);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #adhesion .list-group {
+    width: 100%;
+  }
+  #adhesion .btn-engagement {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+  }
+}
+
+.adhesion-section {
+  background: rgba(25, 25, 35, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 50px;
+  color: #fff;
+}
+
+.section-title {
+  color: #FFD700;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+.section-subtitle {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.adhesion-form h4 {
+  color: #FFD700;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.adhesion-form .form-group {
+  margin-bottom: 20px;
+}
+
+.adhesion-form label {
+  display: block;
+  font-weight: 600;
+  color: #FFD700;
+  margin-bottom: 8px;
+}
+
+.adhesion-form input,
+.adhesion-form select,
+.adhesion-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.adhesion-form input:focus,
+.adhesion-form select:focus,
+.adhesion-form textarea:focus {
+  outline: none;
+  border-color: #FFD700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.btn-engagement {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #800000, #FFD700);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-engagement:hover {
+  background: linear-gradient(90deg, #FFD700, #800000);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #FFD700;
+}
+
+/* Bordures dorées pour le bloc de paiement */
+.border-gold {
+    border: 1px solid rgba(255, 204, 0, 0.4);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+.text-gold {
+    color: #ffcc00;
+}
+
+@media (min-width: 768px) {
+    .border-end-gold {
+        border-right: 1px solid rgba(255, 204, 0, 0.2);
+    }
+}
+
+/* ------------------------ */
+
+/* Container des onglets */
+.membership-tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Cacher l'input radio réel */
+.membership-tabs input[type="radio"] {
+    display: none;
+}
+
+/* Design de l'onglet (Label) */
+.membership-tabs label {
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 204, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* État survolé */
+.membership-tabs label:hover {
+    background: rgba(255, 204, 0, 0.1);
+    border-color: #ffcc00;
+}
+
+/* État sélectionné (quand le radio invisible est coché) */
+.membership-tabs input[type="radio"]:checked + label {
+    background: #ffcc00;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+}
+
+/* Design de la Modale Futuriste */
+.modal-futuristic {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content-futuristic {
+    background: #0a0a0a;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    color: #fff;
+    text-align: center;
+}
+
+.text-gold { color: #FFD700; }
+
+.btn-cancel {
+    background: transparent;
+    border: 1px solid #800000;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.contact-section {
+  background: linear-gradient(135deg, #2c0a0a, #000);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  /* margin-top: 40px; */
+}
+
+.contact-section h2 {
+  color: gold;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px gold;
+  text-align: center;
+}
+
+/* Formulaire futuriste */
+.futuristic-form {
+  text-align: center;
+}
+
+/* Champs uniformisés */
+.futuristic-form input,
+.futuristic-form textarea,
+.futuristic-input {
+  display: block;
+  width: 95%;              /* largeur uniforme */
+  max-width: 500px;        /* limite pour éviter trop large */
+  margin: 15px auto;       /* centrage et espacement */
+  padding: 12px 15px;      /* confort de saisie */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid gold;
+  border-radius: 10px;
+  color: white;
+  font-size: 1em;
+  box-sizing: border-box;  /* inclut padding dans la largeur */
+}
+
+/* Champ message identique pour les deux blocs */
+.futuristic-form textarea,
+.futuristic-input[type="textarea"] {
+  height: 150px;           /* hauteur fixe pour uniformité */
+  resize: none;            /* empêche le redimensionnement */
+}
+
+/* Placeholders dorés translucides */
+.futuristic-form input::placeholder,
+.futuristic-form textarea::placeholder {
+  color: rgba(255, 215, 0, 0.6);
+}
+
+/* Boutons uniformisés */
+.btn-custom {
+  background: rgba(255, 215, 0, 0.2);
+  border: 1px solid gold;
+  color: white;
+  padding: 12px 25px;
+  margin: 10px auto;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+  display: inline-block;
+  width: 95%;              /* largeur uniforme */
+  max-width: 500px;        /* limite */
+  text-align: center;
+}
+
+.btn-custom:hover {
+  background: gold;
+  color: black;
+  box-shadow: 0 0 15px gold;
+}
+
+.btn-cancel:hover {
+    background: rgba(128, 0, 0, 0.2);
+    border-color: #ff0000;
+}
+
+.projets-section {
+  background: rgba(20, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-top: 2px solid #FFD700;
+}
+
+.project-card .futuristic-card {
+  min-height: 250px;
+}
+
+.project-card .card-title {
+  color: #FFD700;
+  font-size: 1.2rem;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.project-card .card-meta {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.project-card .card-text {
+  color: #fff;
+}
+
+.active-filter {
+  background: gold !important;
+  color: black !important;
+  box-shadow: 0 0 15px gold;
+}
+
+.formations-section {
+  background: rgba(20, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-top: 2px solid #FFD700;
+}
+
+.formations-section .card-title {
+  color: #FFD700;
+  font-size: 1.2rem;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+.formations-section .card-meta {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
