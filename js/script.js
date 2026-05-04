@@ -155,7 +155,7 @@ document.querySelector('.adhesion-form').addEventListener('submit', function(e) 
     } else {
         annexeText += "Veuillez sélectionner un type d’adhésion pour voir les pièces requises.\n\n";
     }
-    annexeText += "N.B : Les dossiers doivent être transmis par voie électronique à : contact@sadc-ascl.com";
+    annexeText += "N.B : Les dossiers doivent être transmis par voie électronique à : contact-1@sadc-ascl.com ou à contact-2@sadc-ascl.com";
 
     const annexeLines = doc.splitTextToSize(annexeText, 170);
     doc.text(annexeLines, 20, y2);
