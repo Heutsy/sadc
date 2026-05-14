@@ -121,6 +121,15 @@
     "intervenant3-publications": "Publications : Études sur la gouvernance économique.",
     "modal-close": "Fermer",
 
+    "blog-title": "Blog & Actualités",
+    "blog-subtitle": "Analyses rapides, tribunes et informations accessibles",
+    "titre-feu": "AUTOUR DU FEU",
+    "theme": "Thème : Droit de l'homme en Afrique : entre engagements normatifs et réalités politiques.",
+    "date": "17 mai 2026",
+    "heure": "19:00 (GMT +2)",
+    "lieu": "Sur Zoom",
+    "blog-readmore": "Lire plus",
+
     "thematiques-title": "Thématiques",
     "thematiques-subtitle": "Explorez nos domaines de recherche et d’action",
     "thematiques1-title": "Droit communautaire",
@@ -535,6 +544,15 @@
     "voir-bio": "View my bio",
 
     "section_motivation": "V. Motivation",
+
+    "blog-title": "Blog & News",
+    "blog-subtitle": "Quick analyses, opinion pieces and accessible information",
+    "titre-feu": "AROUND THE FIRE",
+    "theme": "Theme: Human rights in Africa: between normative commitments and political realities.",
+    "date": "May 17, 2026",
+    "heure": "7:00 PM (GMT +2)",
+    "lieu": "On Zoom",
+    "blog-readmore": "Read more",
 
     "formations_title": "Our Trainings",
     "formations_subtitle": "Develop your skills in African community law",
@@ -1350,6 +1368,15 @@
     "social-facebook": "Facebook",
     "footer-bottom": "© 2026 SADC-ASCL. Haki zote zimehifadhiwa.",
 
+    "blog-title": "Blogu & Habari",
+    "blog-subtitle": "Uchambuzi wa haraka, makala na taarifa rahisi kufikiwa",
+    "titre-feu": "KARIBU NA MOTO",
+    "theme": "Mada: Haki za binadamu barani Afrika: kati ya ahadi za kisheria na hali halisi za kisiasa.",
+    "date": "17 Mei 2026",
+    "heure": "19:00 (GMT +2)",
+    "lieu": "Kupitia Zoom",
+    "blog-readmore": "Soma zaidi",
+
     "form_title": "Fomu ya Uanachama",
     "form_subtitle": "Tafadhali jaza kwa uwazi na sahihi.",
     "section_identification": "I. Utambulisho wa Mwombaji",
@@ -2038,7 +2065,16 @@
     "titre-feu": "حول النار",
     "sub-content-feu": "حول النار هو برنامج...",
     "content-coffee": "قهوة الاندماج هو برنامج افتراضي تستضيفه الجمعية الأفريقية للقانون المجتمعي، مخصص للتساؤلات والمواقف حول واقع الاندماج الأفريقي. عقدت جلسته الأولى في 5 أغسطس 2023 ومنذ ذلك الحين شهد العديد من التدخلات. يهدف هذا البرنامج إلى أن يكون منصة لقاء للباحثين الكبار من مختلف التخصصات للمساهمة في تطوير اندماج قائم على الشعوب، لقلب الطاولة على اندماج الحكومات الذي تبدو نقائصه واضحة.",
-    "content-feu": "حول النار هو برنامج افتراضي تستضيفه الجمعية الأفريقية للقانون المجتمعي، مخصص للبحث العلمي الشبابي الأفريقي. هدفه هو توفير مساحة للنقاش وتقدير الباحثين الشباب الأفارقة (في مراحل الإجازة، الماجستير والدكتوراه) حول موضوعات تتعلق بالاندماج الأفريقي. إنه برنامج شهري، يديره شباب من كل واحدة من المناطق الخمس في أفريقيا (الجنوب، الشرق، الوسط، الغرب، الشمال) بهدف تبادل وجهات النظر وبناء جسور بين مختلف الأفريقيات، نحو قارة متكاملة ومزدهرة بحلول عام 2063."
+    "content-feu": "حول النار هو برنامج افتراضي تستضيفه الجمعية الأفريقية للقانون المجتمعي، مخصص للبحث العلمي الشبابي الأفريقي. هدفه هو توفير مساحة للنقاش وتقدير الباحثين الشباب الأفارقة (في مراحل الإجازة، الماجستير والدكتوراه) حول موضوعات تتعلق بالاندماج الأفريقي. إنه برنامج شهري، يديره شباب من كل واحدة من المناطق الخمس في أفريقيا (الجنوب، الشرق، الوسط، الغرب، الشمال) بهدف تبادل وجهات النظر وبناء جسور بين مختلف الأفريقيات، نحو قارة متكاملة ومزدهرة بحلول عام 2063.",
+
+    "blog-title": "المدونة والأخبار",
+    "blog-subtitle": "تحليلات سريعة، مقالات رأي ومعلومات متاحة",
+    "titre-feu": "حول النار",
+    "theme": "الموضوع: حقوق الإنسان في إفريقيا: بين الالتزامات المعيارية والواقع السياسي.",
+    "date": "17 مايو 2026",
+    "heure": "19:00 (GMT +2)",
+    "lieu": "عبر زووم",
+    "blog-readmore": "اقرأ المزيد"
   }
 }
 
