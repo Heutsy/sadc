@@ -517,7 +517,9 @@
     "titre-feu": "AUTOUR DU FEU",
     "sub-content-feu": "AUTOUR DU FEU est un programme...",
     "content-coffee": "THE COFFEE OF INTEGRATION est un programme virtuel hébergé par la Société Africaine de Droit Communautaire, dédié aux questionnements et au positionnement sur l’actualité de l’intégration africaine. Sa première session a été réalisée le 5 août 2023 et depuis lors, elle a connu de nombreuses interventions. Ce programme se veut une plateforme de rencontre des chercheurs séniors de diverses disciplines pour participer au développement d’une intégration des peuples pour renverser la table d’une intégration des gouvernements dont les insuffisances semblent éprouver.",
-    "content-feu": "AUTOUR DU FEU est un programme virtuel hébergé par la Société Africaine de Droit Communautaire, dédié à la jeune recherche africaine. Il a pour objectif d’offrir un espace de discussion et de valorisation des jeunes chercheurs africains (dans les cycles Licence, Master et Doctorat) sur des thématiques touchant à l’intégration africaine. Il s’agit d’un programme mensuel, animé par de jeunes ressortissant de chacune des 5 régions de l’Afrique (Sud, Est, Centre, Ouest, Nord) en vue de croiser les regards et créer des ponts entre les différentes Afriques, en vue d’un continent intégré et prospère à l’horizon 2063."
+    "content-feu": "AUTOUR DU FEU est un programme virtuel hébergé par la Société Africaine de Droit Communautaire, dédié à la jeune recherche africaine. Il a pour objectif d’offrir un espace de discussion et de valorisation des jeunes chercheurs africains (dans les cycles Licence, Master et Doctorat) sur des thématiques touchant à l’intégration africaine. Il s’agit d’un programme mensuel, animé par de jeunes ressortissant de chacune des 5 régions de l’Afrique (Sud, Est, Centre, Ouest, Nord) en vue de croiser les regards et créer des ponts entre les différentes Afriques, en vue d’un continent intégré et prospère à l’horizon 2063.",
+    "id_zoom": "ID : 967 5946 2251",
+    "passcode_zoom": "Code d'accès : 430347"
   },
 
   "en": {
@@ -1036,7 +1038,9 @@
     "titre-feu": "AROUND THE FIRE",
     "sub-content-feu": "AROUND THE FIRE is a program...",
     "content-coffee": "THE COFFEE OF INTEGRATION is a virtual program hosted by the African Society of Community Law, dedicated to questioning and positioning on the current state of African integration. Its first session was held on August 5, 2023, and since then, it has featured numerous interventions. This program aims to be a platform for senior researchers from various disciplines to contribute to the development of people-centered integration, overturning the shortcomings of government-led integration.",
-    "content-feu": "AROUND THE FIRE is a virtual program hosted by the African Society of Community Law, dedicated to young African research. Its objective is to provide a space for discussion and recognition of young African researchers (in Bachelor, Master, and Doctorate cycles) on topics related to African integration. It is a monthly program, led by young representatives from each of the five regions of Africa (South, East, Central, West, North), with the aim of exchanging perspectives and building bridges between the different Africas, towards an integrated and prosperous continent by 2063."
+    "content-feu": "AROUND THE FIRE is a virtual program hosted by the African Society of Community Law, dedicated to young African research. Its objective is to provide a space for discussion and recognition of young African researchers (in Bachelor, Master, and Doctorate cycles) on topics related to African integration. It is a monthly program, led by young representatives from each of the five regions of Africa (South, East, Central, West, North), with the aim of exchanging perspectives and building bridges between the different Africas, towards an integrated and prosperous continent by 2063.",
+    "id_zoom": "ID: 967 5946 2251",
+    "passcode_zoom": "Passcode: 430347"
   },
 
   "sw": {
@@ -1555,7 +1559,9 @@
     "sub-content-coffee": "KAHAWA YA UJUMUIKAZI ni mpango...",
     "sub-content-feu": "KARIBU NA MOTO ni mpango...",
     "content-coffee": "KAHAWA YA UJUMUIKAZI ni mpango wa mtandaoni unaoandaliwa na Jumuiya ya Kiafrika ya Sheria ya Jumuiya, uliotolewa kwa maswali na nafasi kuhusu hali ya sasa ya ujumuikaji wa Afrika. Kikao chake cha kwanza kilifanyika tarehe 5 Agosti 2023 na tangu wakati huo kimekuwa na michango mingi. Mpango huu unakusudia kuwa jukwaa la kukutana kwa watafiti wakuu kutoka taaluma mbalimbali kushiriki katika kukuza ujumuikaji wa watu, ili kubadilisha mapungufu ya ujumuikaji unaoongozwa na serikali.",
-    "content-feu": "KARIBU NA MOTO ni mpango wa mtandaoni unaoandaliwa na Jumuiya ya Kiafrika ya Sheria ya Jumuiya, uliotolewa kwa utafiti wa vijana wa Kiafrika. Lengo lake ni kutoa nafasi ya majadiliano na kuthamini watafiti wachanga wa Kiafrika (katika ngazi za Shahada, Uzamili na Uzamivu) juu ya mada zinazohusu ujumuikaji wa Afrika. Ni mpango wa kila mwezi, unaoendeshwa na vijana kutoka kila moja ya kanda tano za Afrika (Kusini, Mashariki, Kati, Magharibi, Kaskazini) kwa lengo la kubadilishana mitazamo na kujenga madaraja kati ya Afrika mbalimbali, kuelekea bara lililojumuishwa na lenye ustawi ifikapo 2063."
+    "content-feu": "KARIBU NA MOTO ni mpango wa mtandaoni unaoandaliwa na Jumuiya ya Kiafrika ya Sheria ya Jumuiya, uliotolewa kwa utafiti wa vijana wa Kiafrika. Lengo lake ni kutoa nafasi ya majadiliano na kuthamini watafiti wachanga wa Kiafrika (katika ngazi za Shahada, Uzamili na Uzamivu) juu ya mada zinazohusu ujumuikaji wa Afrika. Ni mpango wa kila mwezi, unaoendeshwa na vijana kutoka kila moja ya kanda tano za Afrika (Kusini, Mashariki, Kati, Magharibi, Kaskazini) kwa lengo la kubadilishana mitazamo na kujenga madaraja kati ya Afrika mbalimbali, kuelekea bara lililojumuishwa na lenye ustawi ifikapo 2063.",
+    "id_zoom": "Kitambulisho: 967 5946 2251",
+    "passcode_zoom": "Nambari ya siri: 430347"
   },
 
   "ar": {
@@ -2074,7 +2080,9 @@
     "date": "17 مايو 2026",
     "heure": "19:00 (GMT +2)",
     "lieu": "عبر زووم",
-    "blog-readmore": "اقرأ المزيد"
+    "blog-readmore": "اقرأ المزيد",
+    "id_zoom": "المعرف: 967 5946 2251",
+    "passcode_zoom": "رمز الدخول: 430347"
   }
 }
 
