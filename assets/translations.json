@@ -5,6 +5,8 @@
     "hero-btn-revue": "Explorer la revue",
     "hero-btn-conferences": "Voir les conférences",
 
+    "click_zoom": "cliquez ici",
+
     "blog-article1-title-1": "African Integration Digest",
     "blog-article1-summary-1": "AfCFTA Investment Protocol : Africanizing Arbitration as a Vanguard for Climate and Environmental Justice ?",
     "blog-article1-date-1": "Publié le 31 mars 2026",
@@ -532,6 +534,8 @@
      "membre-fondateur": "Founding Member - SADC",
     "lieu_zoom": "On Zoom: https://uvsq-fr.zoom.us/j/96759462251?pwd=swOZ8bDwkFINY8YjS8ItM4A3qaoJzY.1",
 
+    "click_zoom": "click here",
+
      "poste_ella": "Founding Member - SADC. Doctor/PhD in Public Law. Lecturer at the Department of International and Community Public Law, Faculty of Legal and Political Sciences, University of Yaoundé II. Director of Academic Affairs and Cooperation at the Multinational University of Ambam (UMA).",
     "bureau_ella_poste": "Vice-President - SADC (Center)",
     "cera": "Center for African Regional Studies (CERA-BF)",
@@ -1053,6 +1057,7 @@
     "membre-fondateur": "Mwanachama Mwanzilishi - SADC",
 
     "lieu_zoom": "Kupitia Zoom: https://uvsq-fr.zoom.us/j/96759462251?pwd=swOZ8bDwkFINY8YjS8ItM4A3qaoJzY.1",
+    "click_zoom": "bonyeza hapa",
 
     "accueil": "Nyumbani",
     "apropos": "Kuhusu",
@@ -2088,7 +2093,8 @@
     "lieu": "عبر زووم",
     "blog-readmore": "اقرأ المزيد",
     "id_zoom": "المعرف: 967 5946 2251",
-    "passcode_zoom": "رمز الدخول: 430347"
+    "passcode_zoom": "رمز الدخول: 430347",
+    "click_zoom": "اضغط هنا"
   }
 }
 
