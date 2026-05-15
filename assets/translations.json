@@ -5,6 +5,7 @@
     "hero-btn-revue": "Explorer la revue",
     "hero-btn-conferences": "Voir les conférences",
 
+    "lieu_zoom": "Sur Zoom :",
     "click_zoom": "cliquez ici",
 
     "blog-article1-title-1": "African Integration Digest",
@@ -14,7 +15,6 @@
     "president-fondateur": "Président Fondateur",
 
     "fondateur_eko_poste": "Membre Fondateur - SADC",
-    "lieu_zoom": "Sur Zoom : https://uvsq-fr.zoom.us/j/96759462251?pwd=swOZ8bDwkFINY8YjS8ItM4A3qaoJzY.1",
 
     "revue-text": "Dirigée par le Président Fondateur, assisté d'un Secrétaire Technique et d'un Comité Scientifique.",
 
@@ -532,9 +532,6 @@
     "hero-btn-conferences": "Watch the conferences",
     "statut": "Status: In progress",
      "membre-fondateur": "Founding Member - SADC",
-    "lieu_zoom": "On Zoom: https://uvsq-fr.zoom.us/j/96759462251?pwd=swOZ8bDwkFINY8YjS8ItM4A3qaoJzY.1",
-
-    "click_zoom": "click here",
 
      "poste_ella": "Founding Member - SADC. Doctor/PhD in Public Law. Lecturer at the Department of International and Community Public Law, Faculty of Legal and Political Sciences, University of Yaoundé II. Director of Academic Affairs and Cooperation at the Multinational University of Ambam (UMA).",
     "bureau_ella_poste": "Vice-President - SADC (Center)",
@@ -1046,7 +1043,10 @@
     "content-coffee": "THE COFFEE OF INTEGRATION is a virtual program hosted by the African Society of Community Law, dedicated to questioning and positioning on the current state of African integration. Its first session was held on August 5, 2023, and since then, it has featured numerous interventions. This program aims to be a platform for senior researchers from various disciplines to contribute to the development of people-centered integration, overturning the shortcomings of government-led integration.",
     "content-feu": "AROUND THE FIRE is a virtual program hosted by the African Society of Community Law, dedicated to young African research. Its objective is to provide a space for discussion and recognition of young African researchers (in Bachelor, Master, and Doctorate cycles) on topics related to African integration. It is a monthly program, led by young representatives from each of the five regions of Africa (South, East, Central, West, North), with the aim of exchanging perspectives and building bridges between the different Africas, towards an integrated and prosperous continent by 2063.",
     "id_zoom": "ID: 967 5946 2251",
-    "passcode_zoom": "Passcode: 430347"
+    "passcode_zoom": "Passcode: 430347",
+
+    "lieu_zoom": "On Zoom:",
+    "click_zoom": "click here"
   },
 
   "sw": {
@@ -1056,7 +1056,7 @@
     "hero-btn-conferences": "Tazama mikutano",
     "membre-fondateur": "Mwanachama Mwanzilishi - SADC",
 
-    "lieu_zoom": "Kupitia Zoom: https://uvsq-fr.zoom.us/j/96759462251?pwd=swOZ8bDwkFINY8YjS8ItM4A3qaoJzY.1",
+    "lieu_zoom": "Kupitia Zoom:",
     "click_zoom": "bonyeza hapa",
 
     "accueil": "Nyumbani",
@@ -1579,8 +1579,6 @@
     "hero-btn-revue": "استكشاف المجلة",
     "hero-btn-conferences": "مشاهدة المؤتمرات",
 
-    "lieu_zoom": "عبر زووم: https://uvsq-fr.zoom.us/j/96759462251?pwd=swOZ8bDwkFINY8YjS8ItM4A3qaoJzY.1",
-
     "pionniers": "رواد الاندماج الأفريقي",
     "titre1-sall": "أستاذ جامعي في جامعة الشيخ أنتا ديوب في داكار",
     "titre2-sall": "محامٍ، قاضٍ سابق في محكمة عدل الإيكواس",
@@ -2094,6 +2092,8 @@
     "blog-readmore": "اقرأ المزيد",
     "id_zoom": "المعرف: 967 5946 2251",
     "passcode_zoom": "رمز الدخول: 430347",
+
+    "lieu_zoom": "عبر زووم:",
     "click_zoom": "اضغط هنا"
   }
 }
