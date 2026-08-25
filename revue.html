@@ -3,19 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SADC-ASCL</title>
+    <title>SADC-ASCL — RADCom / AJCL</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+        /* ===================================================================
+           Page RADCom / AJCL — mise en page inspirée de la fiche-revue Érudit
+           (colonne principale + colonne "fiche technique"), habillée avec
+           le système visuel SADC-ASCL déjà présent dans style.css.
+           Préfixe des classes : rq- pour éviter toute collision.
+        =================================================================== */
+
+        .rq-section {
+            background: rgba(15, 5, 15, 0.88);
+            backdrop-filter: blur(12px);
+            border-top: 2px solid #ffcc00;
+            border-bottom: 2px solid rgba(255, 204, 0, 0.3);
+            padding: 50px 0 70px;
+        }
+
+        .rq-breadcrumb {
+            font-size: 0.85rem;
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+        .rq-breadcrumb a { color: #ccc; text-decoration: none; }
+        .rq-breadcrumb a:hover { color: #FFD700; }
+
+        /* --- Bloc identité revue (plaque bilingue fixe, comme la page de titre RADCom) --- */
+        .rq-identity {
+            border-left: 3px solid #FFD700;
+            padding-left: 16px;
+            margin-bottom: 6px;
+        }
+        .rq-identity .rq-brand {
+            font-size: 2.1rem;
+            color: #FFD700;
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+            margin-bottom: 6px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .rq-identity .rq-subtitle-lang {
+            font-size: 1.05rem;
+            color: #e8c76a;
+            font-weight: 500;
+            margin: 2px 0;
+        }
+        .rq-identity .rq-tagline {
+            font-size: 0.95rem;
+            color: #ccc;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        .rq-credits {
+            margin-top: 18px;
+            font-size: 0.88rem;
+            color: #cfcfcf;
+            line-height: 1.6;
+            border-left: 2px solid rgba(255, 215, 0, 0.4);
+            padding-left: 14px;
+        }
+        .rq-credits strong { color: #FFD700; font-weight: 600; }
+
+        /* --- Onglets --- */
+        .rq-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 30px 0 25px;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.25);
+        }
+        .rq-tab {
+            background: none;
+            border: none;
+            color: #ccc;
+            padding: 10px 18px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .rq-tab:hover { color: #FFD700; }
+        .rq-tab.active {
+            color: #FFD700;
+            border-bottom-color: #800000;
+            background: linear-gradient(180deg, rgba(128,0,0,0.15), transparent);
+        }
+
+        .rq-panel { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .rq-panel.active { display: block; }
+
+        .rq-panel h3 {
+            color: #FFD700;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 8px rgba(255,215,0,0.4);
+        }
+        .rq-panel p { color: #e6e6e6; line-height: 1.7; }
+        .rq-panel .rq-intro-text { color: #ccc; font-style: italic; margin-bottom: 20px; }
+
+        .rq-apropos-contact-box {
+            margin-top: 24px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-size: 0.9rem;
+            color: #eee;
+            line-height: 1.8;
+        }
+        .rq-apropos-contact-box a { color: #FFD700; text-decoration: none; }
+        .rq-apropos-contact-box a:hover { text-decoration: underline; }
+
+        /* --- Callout info (archivage) --- */
+        .rq-callout {
+            background: rgba(255, 215, 0, 0.06);
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 0.9rem;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        /* --- Historique / numéros --- */
+        .rq-history {
+            columns: 2;
+            column-gap: 40px;
+        }
+        @media (max-width: 700px) { .rq-history { columns: 1; } }
+
+        .rq-year-block {
+            break-inside: avoid;
+            margin-bottom: 26px;
+        }
+        .rq-year-block h4 {
+            color: #FFD700;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+        .rq-issue {
+            font-size: 0.9rem;
+            color: #ddd;
+            margin: 2px 0;
+        }
+        .rq-issue.rq-thematic {
+            font-weight: 700;
+            color: #fff;
+        }
+        .rq-issue a { color: inherit; text-decoration: none; }
+        .rq-issue a:hover { color: #FFD700; text-decoration: underline; }
+
+        .rq-to-come {
+            font-style: italic;
+            color: #999;
+            font-size: 0.88rem;
+        }
+
+        /* --- Documents éditoriaux (téléchargements FR/EN) --- */
+        .rq-doc-group {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,215,0,0.25);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 18px;
+        }
+        .rq-doc-group h4 {
+            color: #FFD700;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+        .rq-doc-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .rq-doc-buttons .btn-custom {
+            width: auto;
+            margin: 0;
+            padding: 8px 18px;
+            font-size: 0.88rem;
+        }
+
+        /* --- Comité de rédaction (grille) --- */
+        .rq-comite-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 14px;
+            margin-top: 14px;
+        }
+        .rq-comite-item {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,215,0,0.25);
+            border-radius: 10px;
+            padding: 12px 15px;
+        }
+        .rq-comite-item .role { color: #FFD700; font-weight: 700; display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .rq-comite-item .name { color: #fff; font-size: 0.95rem; }
+        .rq-name-list { list-style: disc; margin: 0; padding-left: 20px; color: #fff; font-size: 0.95rem; }
+        .rq-name-list li { margin-bottom: 3px; }
+        .rq-president-line { color: #fff; font-size: 0.95rem; margin: 0; }
+        .rq-president-line span { color: #FFD700; font-weight: 600; }
+        html[dir="rtl"] .rq-name-list { padding-left: 0; padding-right: 20px; }
+
+        /* --- Colonne latérale --- */
+        .rq-side-block {
+            margin-bottom: 34px;
+        }
+        .rq-side-block h5 {
+            color: #FFD700;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
+            padding-bottom: 6px;
+        }
+
+        .rq-cover-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,215,0,0.35);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .rq-cover-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px rgba(255,215,0,0.35);
+        }
+        .rq-cover-card img { width: 100%; display: block; }
+        .rq-cover-card .rq-cover-caption {
+            padding: 12px 14px;
+            font-size: 0.88rem;
+            color: #eee;
+        }
+        .rq-cover-card .rq-cover-caption a { color: #FFD700; text-decoration: none; }
+        .rq-cover-card .rq-cover-caption a:hover { text-decoration: underline; }
+
+        .rq-search-box {
+            display: flex;
+            border: 1px solid rgba(255,215,0,0.4);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .rq-search-box input {
+            flex: 1;
+            background: rgba(255,255,255,0.06);
+            border: none;
+            color: #fff;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+        }
+        .rq-search-box input::placeholder { color: #999; }
+        .rq-search-box button {
+            background: #800000;
+            border: none;
+            color: #FFD700;
+            padding: 0 16px;
+        }
+
+        .rq-links-list { list-style: none; padding: 0; margin: 14px 0 0; }
+        .rq-links-list li { margin-bottom: 8px; }
+        .rq-links-list a {
+            color: #ddd;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .rq-links-list a:hover { color: #FFD700; }
+
+        .rq-fiche dl { margin: 0; }
+        .rq-fiche dt {
+            color: #999;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 14px;
+        }
+        .rq-fiche dt:first-child { margin-top: 0; }
+        .rq-fiche dd {
+            color: #fff;
+            font-size: 0.92rem;
+            margin: 2px 0 0;
+        }
+        .rq-fiche dd a { color: #FFD700; }
+
+        .rq-partners-list { list-style: none; padding: 0; margin: 0; }
+        .rq-partners-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(255,215,0,0.2);
+            font-size: 0.88rem;
+            color: #ddd;
+        }
+        .rq-partners-list li:last-child { border-bottom: none; }
+
+        .rq-social-row { display: flex; gap: 14px; }
+        .rq-social-row a { font-size: 1.4rem; color: #FFD700; transition: transform 0.25s; }
+        .rq-social-row a:hover { transform: scale(1.2); color: #fff; }
+
+        /* --- RTL pour l'arabe --- */
+        html[dir="rtl"] .rq-identity { border-left: none; border-right: 3px solid #FFD700; padding-left: 0; padding-right: 16px; }
+        html[dir="rtl"] .rq-credits { border-left: none; border-right: 2px solid rgba(255,215,0,0.4); padding-left: 0; padding-right: 14px; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body> 
+<body>
 
     <!-- Hero Section -->
     <header class="hero">
         <div class="overlay">
             <div class="hero-content">
-                <h1 data-i18n="revue">revue</h1>
-                <p data-i18n="hero-subtitle">Le hub du droit communautaire africain</p>
+                <h1 data-i18n="revue">RADCom/AJCL</h1>
+                <p data-i18n="rc-hero-subtitle">Revue africaine de droit communautaire</p>
+                <p data-i18n="rc-hero-tagline" style="font-size:1.05em; font-style:italic;">Pour une Afrique intégrée par le droit</p>
+                <p data-i18n="rc-hero-issn" style="font-size:0.85em; opacity:0.85;">Numéro ISSN en cours d'attribution</p>
             </div>
         </div>
     </header>
@@ -31,7 +342,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" data-i18n="accueil" href="/index.html">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" data-i18n="apropos" href="/about.html">A propos de nous</a></li>
-                    <li class="nav-item"><a class="nav-link" data-i18n="revue" href="#">Revue</a></li>
+                    <li class="nav-item"><a class="nav-link" data-i18n="revue" href="#">RADCom/AJCL</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-i18n="ressources" href="" role="button" data-bs-toggle="dropdown">Ressources</a>
                         <ul class="dropdown-menu">
@@ -40,7 +351,6 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" data-i18n="blog" href="/blog.html">Blog</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" data-i18n="institutionnel" href="/institutionnel.html">Institutionnel</a></li> -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-i18n="evenements" href="" role="button" data-bs-toggle="dropdown">Événements</a>
                         <ul class="dropdown-menu">
@@ -66,10 +376,10 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-i18n="langue" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown">🌐Langue</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onclick="setLanguage('fr')">Français</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="setLanguage('en')">English</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="setLanguage('sw')">Swahili</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="setLanguage('ar')">العربية</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('fr'); return false;">Français</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('en'); return false;">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('sw'); return false;">Swahili</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="setLanguage('ar'); return false;">العربية</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -77,27 +387,285 @@
         </div>
     </nav>
 
-    <!-- Section Revue -->
-    <section id="revue" class="py-5 revue-section">
+    <!-- ===================== Fiche revue (inspirée d'Érudit) ===================== -->
+    <section class="rq-section">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title" data-i18n="revue-title">Revue Scientifique</h2>
-                <p class="section-subtitle" data-i18n="revue-subtitle">Articles académiques, cahiers juridiques et publications</p>
-            </div>
 
-            <!-- Grille d’articles -->
+            <!-- <div class="rq-breadcrumb">
+                <a href="/index.html" data-i18n="rc-breadcrumb-accueil">Accueil</a> /
+                <a href="#" data-i18n="rc-breadcrumb-revues">Revues</a> /
+                <span data-i18n="revue">RADCom/AJCL</span>
+            </div> -->
+
             <div class="row">
-                <!-- Duplique ce bloc pour chaque article -->
-                <div class="col-md-4 mb-4">
-                    <div class="card futuristic-card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title" data-i18n="article-title">Revue Africaine de Droit Communautaire (RADC / AJCL)</h5>
-                            <p class="card-text" data-i18n="article-summary">C’est une revue scientifique hébergée au sein de la SADC‑ASCL, dirigée par le Président fondateur et animée par un comité scientifique et technique.</p>
-                            <p class="card-meta" data-i18n="article-author">Auteur : Eugène NKILI MBIDA</p>
-                            <p data-i18n="article-date">Date : 2026</p>
-                            <a href="" class="btn btn-custom" data-i18n="article-download">Télécharger PDF</a>
+                <!-- ===== Colonne principale ===== -->
+                <div class="col-lg-8">
+
+                    <div class="rq-identity">
+                        <div class="rq-brand">RADCom / AJCL</div>
+                        <p class="rq-subtitle-lang">Revue Africaine de Droit Communautaire</p>
+                        <p class="rq-subtitle-lang">African Journal of Community Law</p>
+                        <p class="rq-tagline">Pour une Afrique intégrée par le Droit — For an Africa United through Law</p>
+                    </div>
+
+                    <div class="rq-credits">
+                        <strong>Direction :</strong> <br>
+                        <ul>
+                            <li>Eugène NKILI MBIDA</li>
+                            <li>Sanae BOUYAYACHEN</li>
+                        </ul>
+                        <strong data-i18n="rc-fiche-secretariat">Secrétariat technique</strong>
+                        <ul>
+                            <li>Arsène Silvère EKO MENGUE</li>
+                            <li>Béhibro Jean-Jaurès KOUASSI</li>
+                        </ul>
+                        <strong>Éditeur :</strong> <br> 
+                        <ul>
+                            <li>Société Africaine de Droit Communautaire (SADC-ASCL)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Onglets -->
+                    <div class="rq-tabs" role="tablist">
+                        <button class="rq-tab" data-target="rq-apropos" type="button" data-i18n="rc-tab-apropos">À propos</button>
+                        <button class="rq-tab active" data-target="rq-numeros" type="button" data-i18n="rc-tab-numeros">Numéros</button>
+                        <button class="rq-tab" data-target="rq-documents" type="button" data-i18n="rc-tab-documents">Documents éditoriaux</button>
+                        <button class="rq-tab" data-target="rq-comite" type="button" data-i18n="rc-tab-comite">Comité de rédaction</button>
+                    </div>
+
+                    <!-- Panneau : À propos (texte officiel "Texte de la rubrique A propos") -->
+                    <div class="rq-panel" id="rq-apropos">
+                        <p data-i18n="rc-apropos-text">
+                            La Revue Africaine de Droit Communautaire est l'organe scientifique de la Société Africaine de Droit Communautaire (SADC). Créée en 2022 par le Dr. Eugène NKILI MBIDA, elle publie son numéro inaugural en 2026, et deux numéros réguliers par année. Elle entend développer également une collection hors-série. La Revue a pour mission de rendre compte de la recherche et de la pratique du droit communautaire en Afrique, et dans le monde. Première revue spécialisée en droit communautaire sur le continent africain, elle publie des textes principalement en français et en anglais, mais accepte des textes en espagnol, en arabe et en swahili. La RADCom constitue également un pont entre les différentes Afriques (anglophone, arabophone, francophone, lusophone, hispanophone…) et une porte d'entrée pour les expériences d'intégration qui ont cours sur d'autres continents.
+                        </p>
+                        <div class="rq-apropos-contact-box" data-i18n="rc-apropos-contact">
+                            Société Africaine de Droit Communautaire<br>
+                            Immeuble Ancien PMUC, Douala 1er, Akwa, Cameroun<br>
+                            <a href="mailto:radcom.ajcl@sadc-ascl.com">radcom.ajcl@sadc-ascl.com</a><br>
+                            <a href="mailto:arsene1eko@sadc-ascl.com">arsene1eko@sadc-ascl.com</a>
                         </div>
                     </div>
+
+                    <!-- Panneau : Numéros (actif par défaut) -->
+                    <div class="rq-panel active" id="rq-numeros">
+                        <h3 data-i18n="rc-history-heading">Historique de la revue</h3>
+
+                        <div class="rq-callout">
+                            <i class="bi bi-info-circle"></i>
+                            <span data-i18n="rc-history-callout">La Revue Africaine de Droit Communautaire est en phase de lancement. Les numéros paraîtront au fil des publications validées par le Comité Scientifique.</span>
+                        </div>
+
+                        <div class="rq-history">
+                            <div class="rq-year-block">
+                                <h4>2026</h4>
+                                <p class="rq-issue rq-thematic">
+                                    <a href="" data-i18n="rc-issue-title">Revue Africaine de Droit Communautaire (RADCom / AJCL)</a>
+                                </p>
+                            </div>
+                            <div class="rq-year-block">
+                                <h4 data-i18n="rc-coming-soon-title">À venir</h4>
+                                <p class="rq-to-come" data-i18n="rc-coming-soon-text">Les prochains numéros seront publiés ici dès leur parution.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panneau : Documents éditoriaux -->
+                    <div class="rq-panel" id="rq-documents">
+                        <h3 data-i18n="rc-tab-documents">Documents éditoriaux</h3>
+                        <p class="rq-intro-text" data-i18n="rc-doc-intro">Documents de référence pour les auteurs, évaluateurs et lecteurs de la RADCom / AJCL.</p>
+
+                        <div class="rq-doc-group">
+                            <h4 data-i18n="rc-doc-titlepage">Page de titre séparée</h4>
+                            <div class="rq-doc-buttons">
+                                <a class="btn btn-custom" href="/Docs/Page de titre séparée - RADCom.docx" data-i18n="rc-doc-btn-fr">Télécharger (Français)</a>
+                                <a class="btn btn-custom" href="/Docs/Separate Title Page_RADCom-AJCL_EN.docx" data-i18n="rc-doc-btn-en">Télécharger (English)</a>
+                            </div>
+                        </div>
+
+                        <div class="rq-doc-group">
+                            <h4 data-i18n="rc-doc-editorial-policy">Politique éditoriale</h4>
+                            <div class="rq-doc-buttons">
+                                <a class="btn btn-custom" href="/Docs/Politique éditoriale - RADCom.pdf" data-i18n="rc-doc-btn-fr">Télécharger (Français)</a>
+                                <a class="btn btn-custom" href="/Docs/Editorial Policy_RADCom-AJCL_EN.pdf" data-i18n="rc-doc-btn-en">Télécharger (English)</a>
+                            </div>
+                        </div>
+
+                        <div class="rq-doc-group">
+                            <h4 data-i18n="rc-doc-review-procedure">Procédure d'évaluation</h4>
+                            <div class="rq-doc-buttons">
+                                <a class="btn btn-custom" href="/Docs/Procédure d'évaluation - RADCom.pdf" data-i18n="rc-doc-btn-fr">Télécharger (Français)</a>
+                                <a class="btn btn-custom" href="/Docs/Review Procedure_RADCom-AJCL_EN.pdf" data-i18n="rc-doc-btn-en">Télécharger (English)</a>
+                            </div>
+                        </div>
+
+                        <div class="rq-doc-group">
+                            <h4 data-i18n="rc-doc-ethics">Code éthique et périodicité</h4>
+                            <div class="rq-doc-buttons">
+                                <a class="btn btn-custom" href="/Docs/Code éthique et périodicité RADCom.pdf" data-i18n="rc-doc-btn-fr">Télécharger (Français)</a>
+                                <a class="btn btn-custom" href="/Docs/Code of Ethics and Periodicity_RADCom-AJCL_EN.pdf" data-i18n="rc-doc-btn-en">Télécharger (English)</a>
+                            </div>
+                        </div>
+
+                        <div class="rq-doc-group">
+                            <h4 data-i18n="rc-doc-guidelines">Consignes de rédaction</h4>
+                            <div class="rq-doc-buttons">
+                                <a class="btn btn-custom" href="/Docs/Consignes de rédaction - RADCom.pdf" data-i18n="rc-doc-btn-fr">Télécharger (Français)</a>
+                                <a class="btn btn-custom" href="/Docs/Author Guidelines_RADCom-AJCL_EN.pdf" data-i18n="rc-doc-btn-en">Télécharger (English)</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Panneau : Comité de rédaction (issu de la Fiche RADCom) -->
+                    <div class="rq-panel" id="rq-comite">
+                        <h3 data-i18n="rc-tab-comite">Comité de rédaction</h3>
+                        <p class="rq-intro-text" data-i18n="rc-comite-intro">La RADCom / AJCL est animée par les organes suivants, conformément à sa fiche technique.</p>
+                        <div class="rq-comite-grid">
+                            <div class="rq-comite-item">
+                                <span class="role" data-i18n="rc-comite-direction-title">Direction de publication</span>
+                                <ul class="rq-name-list">
+                                    <li>Eugène NKILI MBIDA</li>
+                                    <li>Sanae BOUYAYACHEN</li>
+                                </ul>
+                            </div>
+                            <div class="rq-comite-item">
+                                <span class="role" data-i18n="rc-comite-secretariat-title">Secrétariat technique</span>
+                                <ul class="rq-name-list">
+                                    <li>Arsène Silvère EKO MENGUE</li>
+                                    <li>Béhibro Jean-Jaurès KOUASSI</li>
+                                </ul>
+                            </div>
+                            <div class="rq-comite-item">
+                                <span class="role" data-i18n="rc-comite-scientifique-title">Comité Scientifique</span>
+                                <p class="rq-president-line"><span data-i18n="rc-comite-president-label">Président :</span> Alioune SALL</p>
+                            </div>
+                            <div class="rq-comite-item">
+                                <span class="role" data-i18n="rc-comite-redaction-title">Comité de Rédaction</span>
+                                <p class="rq-president-line"><span data-i18n="rc-comite-president-label">Président :</span> Karim ZAOUAQ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ===== Colonne latérale ===== -->
+                <div class="col-lg-4">
+
+                    <div class="rq-side-block">
+                        <h5 data-i18n="rc-side-dernier-numero">Dernier numéro</h5>
+                        <div class="rq-cover-card">
+                            <img src="./assets/logo-revue.png" alt="Couverture — RADCom / AJCL">
+                            <div class="rq-cover-caption">
+                                <a href="" data-i18n="rc-issue-title">Revue Africaine de Droit Communautaire (RADCom / AJCL)</a>
+                                <div style="color:#aaa; margin-top:4px;" data-i18n="rc-issue-date">Date : 2026</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rq-side-block">
+                        <h5 data-i18n="rc-side-explorer">Explorer</h5>
+                        <div class="rq-search-box">
+                            <input type="text" data-i18n-placeholder="rc-side-search-placeholder" placeholder="Rechercher dans la revue…">
+                            <button type="button"><i class="bi bi-search"></i></button>
+                        </div>
+                        <ul class="rq-links-list">
+                            <li><a href="/intervenants.html"><i class="bi bi-people"></i> <span data-i18n="rc-side-index-auteurs">Index des auteurs</span></a></li>
+                            <li><a href="/blog.html"><i class="bi bi-rss"></i> <span data-i18n="rc-side-blog-link">Blog & Fil d'actualités</span></a></li>
+                            <li><a href="/index.html"><i class="bi bi-globe"></i> <span data-i18n="rc-side-site-web">Site web SADC-ASCL</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="rq-side-block rq-fiche">
+                        <h5 data-i18n="rc-side-fiche">Fiche</h5>
+                        <dl>
+                            <dt data-i18n="rc-fiche-peer">Évalué par les pairs</dt>
+                            <dd data-i18n="rc-fiche-peer-value">Oui (double aveugle)</dd>
+
+                            <dt data-i18n="rc-fiche-apc">Frais de publication (APC)</dt>
+                            <dd data-i18n="rc-fiche-apc-value">Non</dd>
+
+                            <dt data-i18n="rc-fiche-access">Politique d'accès</dt>
+                            <dd data-i18n="rc-fiche-access-value">Disponible en libre accès</dd>
+
+                            <dt data-i18n="rc-fiche-archive">Archivage numérique</dt>
+                            <dd data-i18n="rc-fiche-archive-value">Oui</dd>
+
+                            <dt data-i18n="rc-fiche-direction">Direction de publication</dt>
+                            <dd>
+                                <ul>
+                                    <li>Eugène NKILI MBIDA</li>
+                                    <li>Sanae BOUYAYACHEN</li>
+                                </ul>
+                            </dd>
+
+                            <dt data-i18n="rc-fiche-secretariat">Secrétariat technique</dt>
+                            <dd>
+                                <ul>
+                                    <li>Arsène Silvère EKO MENGUE</li>
+                                    <li>Béhibro Jean-Jaurès KOUASSI</li>
+                                </ul>
+                            </dd>
+
+                            
+
+
+                            <dt data-i18n="rc-comite-scientifique-title">Comité Scientifique</dt>
+                            <dd class="rq-president-line"><span data-i18n="rc-comite-president-label" style="color: #ccc;">Président :</span> Alioune SALL</dd> 
+
+                            <dt data-i18n="rc-comite-redaction-title">Comité de Rédaction</dt>
+                            <dd class="rq-president-line"><span data-i18n="rc-comite-president-label" style="color: #ccc;">Président :</span> Karim ZAOUAQ</dd>
+
+                            <dt data-i18n="rc-fiche-editeur">Éditeur</dt>
+                            <dd data-i18n="rc-fiche-editeur-value">Société Africaine de Droit Communautaire</dd>
+
+                            <dt data-i18n="rc-fiche-issn">ISSN</dt>
+                            <dd data-i18n="rc-fiche-issn-value">En cours d'attribution</dd>
+
+                            <dt data-i18n="rc-fiche-frequence">Fréquence de publication</dt>
+                            <dd data-i18n="rc-fiche-frequence-value">2 numéros par année</dd>
+
+                            <dt data-i18n="rc-fiche-periode">Période de publication</dt>
+                            <dd data-i18n="rc-fiche-periode-value">2026 – (en cours)</dd>
+
+                            <dt data-i18n="rc-fiche-support">Type de support</dt>
+                            <dd data-i18n="rc-fiche-support-value">Numérique</dd>
+
+                            <dt data-i18n="rc-fiche-langues">Langues</dt>
+                            <dd data-i18n="rc-fiche-langues-value">Français et Anglais (principalement), Arabe, Espagnol, Swahili</dd>
+
+                            <dt data-i18n="rc-fiche-discipline">Discipline</dt>
+                            <dd data-i18n="rc-fiche-discipline-value">Droit</dd>
+
+                            <dt data-i18n="rc-fiche-contact">Contact général</dt>
+                            <dd><a href="mailto:radcom.ajcl@sadc-ascl.com">radcom.ajcl@sadc-ascl.com</a></dd>
+                        </dl>
+                    </div>
+
+                    <div class="rq-side-block">
+                        <h5 data-i18n="footer-coordonnees-title">Coordonnées</h5>
+                        <ul class="rq-links-list">
+                            <li><a href="mailto:bouyayachen.sanae@sadc-ascl.com"><i class="bi bi-envelope"></i> contact-1@sadc-ascl.com</a></li>
+                            <li><a href="mailto:amougou466@sadc-ascl.com"><i class="bi bi-envelope"></i> contact-2@sadc-ascl.com</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="rq-side-block">
+                        <h5 data-i18n="rc-side-reseaux">Sur les réseaux sociaux</h5>
+                        <div class="rq-social-row">
+                            <a href="https://www.linkedin.com/in/sadc-ascl-african-society-of-community-law-3615ab246?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://youtube.com/@sadc-asclofficiel4749?si=rAg_fDlu4c8XxcBp" target="_blank"><i class="bi bi-youtube"></i></a>
+                            <a href="https://www.facebook.com/share/1AuuCuqL3t/" target="_blank"><i class="bi bi-facebook"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="rq-side-block">
+                        <h5 data-i18n="rc-side-partenaires">Partenaires</h5>
+                        <ul class="rq-partners-list">
+                            <li data-i18n="cera">Centre d'Etudes Régionales Africaines (CERA-BF)</li>
+                            <li data-i18n="apcpa">Association pour la Promotion de la Commande Publique en Afrique</li>
+                            <li data-i18n="irdeic">Institut de Recherche en Droit Européen, International et Comparé (IRDEIC)</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -107,17 +675,6 @@
     <footer class="footer-section">
         <div class="container">
             <div class="footer-grid">
-                    
-                <!-- Colonne 1 : Présentation -->
-                <!-- <div class="footer-col">
-                    <h5 data-i18n="footer-title">SADC-ASCL</h5>
-                    <p data-i18n="footer-description">
-                        Société Africaine de Droit Communautaire<br><br>
-                        Association académique et scientifique à but non lucratif.
-                    </p>
-                </div> -->
-
-                <!-- Colonne 2 : Coordonnées -->
                 <div class="footer-col">
                     <h5 data-i18n="footer-coordonnees-title">Coordonnées</h5>
                     <p data-i18n="footer-address">Siège : Douala-Akwa, Immeuble Ancien PMUC</p>
@@ -126,7 +683,6 @@
                     <p data-i18n="footer-phone">Téléphone : +237 654 807 793</p>
                 </div>
 
-                <!-- Colonne 3 : Liens rapides -->
                 <div class="footer-col">
                     <h5 data-i18n="footer-links-title">Liens rapides</h5>
                     <ul>
@@ -139,25 +695,6 @@
                     </ul>
                 </div>
 
-                <!-- <h4 class="mb-4 text-gold"><i class="bi bi-credit-card-fill"></i>Informations pour le règlement</h4> -->
-                <!-- <div class="payment-info-block p-4 mb-4 border-gold">
-                    <div class="row">
-                        <div class="col-md-6 border-end-gold">
-                            <h6 class="text-uppercase text-white mb-2" class="color">Virement Bancaire</h6>
-                            <p class="small mb-1"><span class="color">Banque:</span> BANGE BANK CAMEROUN</p>
-                            <p class="small mb-1"><span class="color">IBAN:</span> CM21 10040 01007 38201075501 42</p>
-                            <p class="small"><span class="color">SWIFT:</span> NAGCCMCM</p>
-                        </div>
-                        <div class="col-md-6 ps-md-3">
-                            <h6 class="text-uppercase text-white mb-2" class="color">Paiement Mobile</h6>
-                            <p class="small mb-1"><span class="color">Orange Money:</span> +237 699 48 15 19</p>
-                            <p class="small mb-1"><span class="color">Bénéficiaire:</span> EKO MENGUE</p>                            
-                            <p class="small mb-1"><span class="color">Note:</span> Veuillez joindre la preuve de transfert.</p>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- Colonne 4 : Réseaux sociaux -->
                 <div class="col-md-4 text-center d-flex flex-column justify-content-center">
                     <h5 class="mb-4 text-white" data-i18n="contact-social-title">Suivez-nous</h5>
                     <div class="social-icons">
@@ -171,7 +708,6 @@
             </div>
         </div>
 
-        <!-- Bas de page -->
         <div class="footer-bottom text-center mt-4">
             <p data-i18n="footer-bottom">&copy; 2026 SADC-ASCL. Tous droits réservés.</p>
         </div>
@@ -179,6 +715,412 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>
+
+    <!-- ===================================================================
+         Dictionnaire de traduction embarqué (FR / EN / SW / AR) + gestion
+         des onglets. Ce dictionnaire prend le pas sur script.js pour cette
+         page : setLanguage() est redéfini ici et s'applique à tous les
+         éléments [data-i18n] et [data-i18n-placeholder] de la page.
+    =================================================================== -->
+    <script>
+    var rqDict = {
+        fr: {
+            accueil: "Accueil", apropos: "À propos de nous", revue: "RADCom/AJCL",
+            ressources: "Ressources", mediatheque: "Médiathèque", bibliotheque: "Bibliothèque",
+            blog: "Blog", evenements: "Événements", "evenements-permanents": "Permanents",
+            "evenements-occasionnels": "Occasionnels", initiatives: "Initiatives", projets: "Projets",
+            formations: "Formations", communaute: "Communauté", adhesion: "Adhésion",
+            "galerie-communautaristes": "Galerie des communautaristes", contact: "Contact", langue: "Langue",
+
+            "footer-coordonnees-title": "Coordonnées",
+            "footer-address": "Siège : Douala-Akwa, Immeuble Ancien PMUC",
+            "footer-phone": "Téléphone : +237 654 807 793",
+            "footer-links-title": "Liens rapides",
+            "footer-link-presentation": "Présentation",
+            "footer-link-textes": "Textes fondateurs",
+            "footer-link-organisation": "Organisation",
+            "footer-link-recherche": "Recherche & Revue",
+            "footer-link-adhesion": "Adhésion",
+            "footer-link-partenariats": "Partenariats",
+            "contact-social-title": "Suivez-nous",
+            "footer-bottom": "&copy; 2026 SADC-ASCL. Tous droits réservés.",
+
+            cera: "Centre d'Etudes Régionales Africaines (CERA-BF)",
+            apcpa: "Association pour la Promotion de la Commande Publique en Afrique",
+            irdeic: "Institut de Recherche en Droit Européen, International et Comparé (IRDEIC)",
+
+            "rc-hero-subtitle": "Revue africaine de droit communautaire",
+            "rc-hero-tagline": "Pour une Afrique intégrée par le droit",
+            "rc-hero-issn": "Numéro ISSN en cours d'attribution",
+
+            "rc-breadcrumb-accueil": "Accueil",
+            "rc-breadcrumb-revues": "Revues",
+
+            "rc-tab-apropos": "À propos",
+            "rc-tab-numeros": "Numéros",
+            "rc-tab-documents": "Documents éditoriaux",
+            "rc-tab-comite": "Comité de rédaction",
+
+            "rc-apropos-text": "La Revue Africaine de Droit Communautaire est l'organe scientifique de la Société Africaine de Droit Communautaire (SADC). Créée en 2022 par le Dr. Eugène NKILI MBIDA, elle publie son numéro inaugural en 2026, et deux numéros réguliers par année. Elle entend développer également une collection hors-série. La Revue a pour mission de rendre compte de la recherche et de la pratique du droit communautaire en Afrique, et dans le monde. Première revue spécialisée en droit communautaire sur le continent africain, elle publie des textes principalement en français et en anglais, mais accepte des textes en espagnol, en arabe et en swahili. La RADCom constitue également un pont entre les différentes Afriques (anglophone, arabophone, francophone, lusophone, hispanophone…) et une porte d'entrée pour les expériences d'intégration qui ont cours sur d'autres continents.",
+            "rc-apropos-contact": "Société Africaine de Droit Communautaire<br>Immeuble Ancien PMUC, Douala 1er, Akwa, Cameroun<br><a href='mailto:radcom.ajcl@sadc-ascl.com'>radcom.ajcl@sadc-ascl.com</a><br><a href='mailto:arsene1eko@sadc-ascl.com'>arsene1eko@sadc-ascl.com</a>",
+
+            "rc-history-heading": "Historique de la revue",
+            "rc-history-callout": "La Revue Africaine de Droit Communautaire est en phase de lancement. Les numéros paraîtront au fil des publications validées par le Comité Scientifique.",
+            "rc-issue-title": "Revue Africaine de Droit Communautaire (RADCom / AJCL)",
+            "rc-issue-author": "Auteur : Eugène NKILI MBIDA",
+            "rc-issue-date": "Date : 2026",
+            "rc-coming-soon-title": "À venir",
+            "rc-coming-soon-text": "Les prochains numéros seront publiés ici dès leur parution.",
+
+            "rc-doc-intro": "Documents de référence pour les auteurs, évaluateurs et lecteurs de la RADCom / AJCL.",
+            "rc-doc-titlepage": "Page de titre séparée",
+            "rc-doc-editorial-policy": "Politique éditoriale",
+            "rc-doc-review-procedure": "Procédure d'évaluation",
+            "rc-doc-ethics": "Code éthique et périodicité",
+            "rc-doc-guidelines": "Consignes de rédaction",
+            "rc-doc-btn-fr": "Télécharger (Français)",
+            "rc-doc-btn-en": "Télécharger (English)",
+
+            "rc-comite-intro": "La RADCom / AJCL est animée par les organes suivants, conformément à sa fiche technique.",
+            "rc-comite-direction-title": "Direction de publication",
+            "rc-comite-secretariat-title": "Secrétariat technique",
+            "rc-comite-scientifique-title": "Comité Scientifique",
+            "rc-comite-redaction-title": "Comité de Rédaction",
+            "rc-comite-president-label": "Président :",
+
+            "rc-side-dernier-numero": "Dernier numéro",
+            "rc-side-explorer": "Explorer",
+            "rc-side-search-placeholder": "Rechercher dans la revue…",
+            "rc-side-index-auteurs": "Index des auteurs",
+            "rc-side-blog-link": "Blog & Fil d'actualités",
+            "rc-side-site-web": "Site web SADC-ASCL",
+            "rc-side-fiche": "Fiche",
+            "rc-side-reseaux": "Sur les réseaux sociaux",
+            "rc-side-partenaires": "Partenaires",
+
+            "rc-fiche-peer": "Évalué par les pairs", "rc-fiche-peer-value": "Oui (double aveugle)",
+            "rc-fiche-apc": "Frais de publication (APC)", "rc-fiche-apc-value": "Non",
+            "rc-fiche-access": "Politique d'accès", "rc-fiche-access-value": "Disponible en libre accès",
+            "rc-fiche-archive": "Archivage numérique", "rc-fiche-archive-value": "Oui",
+            "rc-fiche-direction": "Direction de publication",
+            "rc-fiche-secretariat": "Secrétariat technique",
+            "rc-fiche-sci-president": "Président du Comité Scientifique",
+            "rc-fiche-red-president": "Président du Comité de Rédaction",
+            "rc-fiche-editeur": "Éditeur", "rc-fiche-editeur-value": "Société Africaine de Droit Communautaire",
+            "rc-fiche-issn": "ISSN", "rc-fiche-issn-value": "En cours d'attribution",
+            "rc-fiche-frequence": "Fréquence de publication", "rc-fiche-frequence-value": "2 numéros par année",
+            "rc-fiche-periode": "Période de publication", "rc-fiche-periode-value": "2026 – (en cours)",
+            "rc-fiche-support": "Type de support", "rc-fiche-support-value": "Numérique",
+            "rc-fiche-langues": "Langues", "rc-fiche-langues-value": "Français et Anglais (principalement), Arabe, Espagnol, Swahili",
+            "rc-fiche-discipline": "Discipline", "rc-fiche-discipline-value": "Droit",
+            "rc-fiche-contact": "Contact général"
+        },
+        en: {
+            accueil: "Home", apropos: "About us", revue: "RADCom/AJCL",
+            ressources: "Resources", mediatheque: "Media Library", bibliotheque: "Library",
+            blog: "Blog", evenements: "Events", "evenements-permanents": "Permanent",
+            "evenements-occasionnels": "Occasional", initiatives: "Initiatives", projets: "Projects",
+            formations: "Training", communaute: "Community", adhesion: "Membership",
+            "galerie-communautaristes": "Gallery Community", contact: "Contact", langue: "Language",
+
+            "footer-coordonnees-title": "Contact Information",
+            "footer-address": "Headquarters: Douala-Akwa, Former PMUC Building",
+            "footer-phone": "Phone: +237 654 807 793",
+            "footer-links-title": "Quick Links",
+            "footer-link-presentation": "Presentation",
+            "footer-link-textes": "Founding Texts",
+            "footer-link-organisation": "Organization",
+            "footer-link-recherche": "Research & Journal",
+            "footer-link-adhesion": "Membership",
+            "footer-link-partenariats": "Partnerships",
+            "contact-social-title": "Follow us",
+            "footer-bottom": "&copy; 2026 SADC-ASCL. All rights reserved.",
+
+            cera: "Center for African Regional Studies (CERA-BF)",
+            apcpa: "Association for the Promotion of Public Procurement in Africa",
+            irdeic: "Research Institute in European, International and Comparative Law (IRDEIC)",
+
+            "rc-hero-subtitle": "African journal of community law",
+            "rc-hero-tagline": "For an Africa United through Law",
+            "rc-hero-issn": "ISSN number: being assigned",
+
+            "rc-breadcrumb-accueil": "Home",
+            "rc-breadcrumb-revues": "Journals",
+
+            "rc-tab-apropos": "About",
+            "rc-tab-numeros": "Issues",
+            "rc-tab-documents": "Editorial documents",
+            "rc-tab-comite": "Editorial board",
+
+            "rc-apropos-text": "The African Journal of Community Law is the scientific organ of the African Society of Community Law (ASCL). Created in 2022 by Dr Eugène NKILI MBIDA, it publishes its inaugural issue in 2026, and two regular issues per year. It also intends to develop a special edition collection. The Journal's mission is to report on the research and practice of community law in Africa, and around the world. The first specialized journal in Africa, it publishes texts mainly in French and English, but accepts texts in Spanish, Arabic and Swahili. The AJCL is also a bridge between the different Africas (English, Arabic, French, Portuguese, Spanish speaking...) and a gateway for integration experiences that are taking place on other continents.",
+            "rc-apropos-contact": "African Society of Community Law<br>Ancien Immeuble PMUC, Douala 1st, Akwa, Cameroon<br><a href='mailto:radcom.ajcl@sadc-ascl.com'>radcom.ajcl@sadc-ascl.com</a><br><a href='mailto:arsene1eko@sadc-ascl.com'>arsene1eko@sadc-ascl.com</a>",
+
+            "rc-history-heading": "Journal history",
+            "rc-history-callout": "The African Journal of Community Law is in its launch phase. Issues will appear as publications are validated by the Scientific Committee.",
+            "rc-issue-title": "African Journal of Community Law (RADCom / AJCL)",
+            "rc-issue-author": "Author: Eugène NKILI MBIDA",
+            "rc-issue-date": "Date: 2026",
+            "rc-coming-soon-title": "Coming soon",
+            "rc-coming-soon-text": "Future issues will be published here as soon as they are released.",
+
+            "rc-doc-intro": "Reference documents for authors, reviewers and readers of the RADCom / AJCL.",
+            "rc-doc-titlepage": "Separate title page",
+            "rc-doc-editorial-policy": "Editorial policy",
+            "rc-doc-review-procedure": "Review procedure",
+            "rc-doc-ethics": "Code of ethics and periodicity",
+            "rc-doc-guidelines": "Author guidelines",
+            "rc-doc-btn-fr": "Download (French)",
+            "rc-doc-btn-en": "Download (English)",
+
+            "rc-comite-intro": "The RADCom / AJCL is run by the following bodies, in accordance with its journal factsheet.",
+            "rc-comite-direction-title": "Editors-in-Chief",
+            "rc-comite-secretariat-title": "Technical Secretariat",
+            "rc-comite-scientifique-title": "Scientific Committee",
+            "rc-comite-redaction-title": "Editorial Board",
+            "rc-comite-president-label": "President:",
+
+            "rc-side-dernier-numero": "Latest issue",
+            "rc-side-explorer": "Explore",
+            "rc-side-search-placeholder": "Search the journal…",
+            "rc-side-index-auteurs": "Author index",
+            "rc-side-blog-link": "Blog & News feed",
+            "rc-side-site-web": "SADC-ASCL website",
+            "rc-side-fiche": "Factsheet",
+            "rc-side-reseaux": "On social media",
+            "rc-side-partenaires": "Partners",
+
+            "rc-fiche-peer": "Peer-reviewed", "rc-fiche-peer-value": "Yes (Double blind)",
+            "rc-fiche-apc": "Article processing charge (APC)", "rc-fiche-apc-value": "No",
+            "rc-fiche-access": "Access policy", "rc-fiche-access-value": "Available in open access",
+            "rc-fiche-archive": "Digital archiving", "rc-fiche-archive-value": "Yes",
+            "rc-fiche-direction": "Editors-in-Chief",
+            "rc-fiche-secretariat": "Technical Secretariat",
+            "rc-fiche-sci-president": "President of the Scientific Committee",
+            "rc-fiche-red-president": "President of the Editorial Board",
+            "rc-fiche-editeur": "Publisher", "rc-fiche-editeur-value": "African Society of Community Law",
+            "rc-fiche-issn": "ISSN", "rc-fiche-issn-value": "Being assigned",
+            "rc-fiche-frequence": "Publishing frequency", "rc-fiche-frequence-value": "2 issues per year",
+            "rc-fiche-periode": "Publication period", "rc-fiche-periode-value": "2026 – (ongoing)",
+            "rc-fiche-support": "Format", "rc-fiche-support-value": "Digital",
+            "rc-fiche-langues": "Languages", "rc-fiche-langues-value": "French and English (mainly), Arabic, Spanish, Swahili",
+            "rc-fiche-discipline": "Discipline", "rc-fiche-discipline-value": "Law",
+            "rc-fiche-contact": "General contact"
+        },
+        sw: {
+            accueil: "Nyumbani", apropos: "Kuhusu", revue: "RADCom/AJCL",
+            ressources: "Rasilimali", mediatheque: "Maktaba ya Media", bibliotheque: "Maktaba",
+            blog: "Blogu", evenements: "Matukio", "evenements-permanents": "Ya Kudumu",
+            "evenements-occasionnels": "Ya Mara kwa Mara", initiatives: "Mipango", projets: "Miradi",
+            formations: "Mafunzo", communaute: "Jumuiya", adhesion: "Uanachama",
+            "galerie-communautaristes": "Ukumbi wa Wajumuiya", contact: "Mawasiliano", langue: "Lugha",
+
+            "footer-coordonnees-title": "Mawasiliano",
+            "footer-address": "Makao Makuu: Douala-Akwa, Jengo la Zamani PMUC",
+            "footer-phone": "Simu: +237 654 807 793",
+            "footer-links-title": "Viungo vya Haraka",
+            "footer-link-presentation": "Utangulizi",
+            "footer-link-textes": "Maandiko ya Msingi",
+            "footer-link-organisation": "Shirika",
+            "footer-link-recherche": "Utafiti na Jarida",
+            "footer-link-adhesion": "Uanachama",
+            "footer-link-partenariats": "Ushirikiano",
+            "contact-social-title": "Tufuate",
+            "footer-bottom": "© 2026 SADC-ASCL. Haki zote zimehifadhiwa.",
+
+            cera: "Kituo cha Masomo ya Kikanda ya Kiafrika (CERA-BF)",
+            apcpa: "Chama cha Kukuza Ununuzi wa Umma Afrika",
+            irdeic: "Taasis ya Utafiti katika Sheria ya Ulaya, Kimataifa na Ikilinganishwa (IRDEIC)",
+
+            "rc-hero-subtitle": "Jarida la Kiafrika la Sheria ya Jumuiya",
+            "rc-hero-tagline": "Kwa Afrika iliyounganishwa kupitia Sheria",
+            "rc-hero-issn": "Nambari ya ISSN inasubiri kutolewa",
+
+            "rc-breadcrumb-accueil": "Nyumbani",
+            "rc-breadcrumb-revues": "Majarida",
+
+            "rc-tab-apropos": "Kuhusu",
+            "rc-tab-numeros": "Matoleo",
+            "rc-tab-documents": "Nyaraka za Uhariri",
+            "rc-tab-comite": "Bodi ya Uhariri",
+
+            "rc-apropos-text": "Jarida la Kiafrika la Sheria ya Jumuiya ni chombo cha kisayansi cha Jumuiya ya Kiafrika ya Sheria ya Jumuiya (SADC). Lilianzishwa mwaka 2022 na Dkt. Eugène NKILI MBIDA, litachapisha toleo lake la kwanza mwaka 2026, na matoleo mawili ya kawaida kila mwaka. Pia linakusudia kuendeleza mkusanyiko maalum wa matoleo. Lengo la Jarida ni kutoa taarifa kuhusu utafiti na matumizi ya sheria ya jumuiya barani Afrika, na duniani kote. Likiwa jarida la kwanza maalumu la sheria ya jumuiya katika bara la Afrika, huchapisha maandishi hasa kwa Kifaransa na Kiingereza, lakini hukubali maandishi kwa Kihispania, Kiarabu na Kiswahili. RADCom pia ni daraja kati ya Afrika mbalimbali (zinazozungumza Kiingereza, Kiarabu, Kifaransa, Kireno, Kihispania…) na lango la uzoefu wa ujumuishaji unaoendelea katika mabara mengine.",
+            "rc-apropos-contact": "Jumuiya ya Kiafrika ya Sheria ya Jumuiya<br>Jengo la Zamani la PMUC, Douala ya 1, Akwa, Kameruni<br><a href='mailto:radcom.ajcl@sadc-ascl.com'>radcom.ajcl@sadc-ascl.com</a><br><a href='mailto:arsene1eko@sadc-ascl.com'>arsene1eko@sadc-ascl.com</a>",
+
+            "rc-history-heading": "Historia ya jarida",
+            "rc-history-callout": "Jarida la Kiafrika la Sheria ya Jumuiya liko katika hatua ya uzinduzi. Matoleo yataonekana pindi machapisho yanapothibitishwa na Kamati ya Kisayansi.",
+            "rc-issue-title": "Jarida la Kiafrika la Sheria ya Jumuiya (RADCom / AJCL)",
+            "rc-issue-author": "Mwandishi: Eugène NKILI MBIDA",
+            "rc-issue-date": "Tarehe: 2026",
+            "rc-coming-soon-title": "Zinazokuja",
+            "rc-coming-soon-text": "Matoleo yajayo yatachapishwa hapa mara tu yanapotolewa.",
+
+            "rc-doc-intro": "Nyaraka za marejeo kwa waandishi, wakaguzi na wasomaji wa RADCom / AJCL.",
+            "rc-doc-titlepage": "Ukurasa wa jina tofauti",
+            "rc-doc-editorial-policy": "Sera ya uhariri",
+            "rc-doc-review-procedure": "Utaratibu wa upitiaji",
+            "rc-doc-ethics": "Kanuni za maadili na marudio",
+            "rc-doc-guidelines": "Miongozo ya waandishi",
+            "rc-doc-btn-fr": "Pakua (Kifaransa)",
+            "rc-doc-btn-en": "Pakua (Kiingereza)",
+
+            "rc-comite-intro": "RADCom / AJCL inaendeshwa na vyombo vifuatavyo, kulingana na fomu yake ya taarifa.",
+            "rc-comite-direction-title": "Uongozi wa Uchapishaji",
+            "rc-comite-secretariat-title": "Sekretarieti ya Kiufundi",
+            "rc-comite-scientifique-title": "Kamati ya Kisayansi",
+            "rc-comite-redaction-title": "Bodi ya Uhariri",
+            "rc-comite-president-label": "Mwenyekiti:",
+
+            "rc-side-dernier-numero": "Toleo la Hivi Karibuni",
+            "rc-side-explorer": "Chunguza",
+            "rc-side-search-placeholder": "Tafuta ndani ya jarida…",
+            "rc-side-index-auteurs": "Faharasa ya waandishi",
+            "rc-side-blog-link": "Blogu na Habari",
+            "rc-side-site-web": "Tovuti ya SADC-ASCL",
+            "rc-side-fiche": "Fomu ya Taarifa",
+            "rc-side-reseaux": "Kwenye Mitandao ya Kijamii",
+            "rc-side-partenaires": "Washirika",
+
+            "rc-fiche-peer": "Imepitiwa na wataalamu", "rc-fiche-peer-value": "Ndiyo (Kipofu mara mbili)",
+            "rc-fiche-apc": "Ada ya uchapishaji (APC)", "rc-fiche-apc-value": "Hapana",
+            "rc-fiche-access": "Sera ya ufikiaji", "rc-fiche-access-value": "Inapatikana kwa ufikiaji huru",
+            "rc-fiche-archive": "Uhifadhi wa kidijitali", "rc-fiche-archive-value": "Ndiyo",
+            "rc-fiche-direction": "Uongozi wa Uchapishaji",
+            "rc-fiche-secretariat": "Sekretarieti ya Kiufundi",
+            "rc-fiche-sci-president": "Mwenyekiti wa Kamati ya Kisayansi",
+            "rc-fiche-red-president": "Mwenyekiti wa Bodi ya Uhariri",
+            "rc-fiche-editeur": "Mchapishaji", "rc-fiche-editeur-value": "Jumuiya ya Kiafrika ya Sheria ya Jumuiya",
+            "rc-fiche-issn": "ISSN", "rc-fiche-issn-value": "Inasubiri kutolewa",
+            "rc-fiche-frequence": "Marudio ya uchapishaji", "rc-fiche-frequence-value": "Matoleo 2 kwa mwaka",
+            "rc-fiche-periode": "Kipindi cha uchapishaji", "rc-fiche-periode-value": "2026 – (inaendelea)",
+            "rc-fiche-support": "Aina ya chombo", "rc-fiche-support-value": "Kidijitali",
+            "rc-fiche-langues": "Lugha", "rc-fiche-langues-value": "Kifaransa na Kiingereza (hasa), Kiarabu, Kihispania, Kiswahili",
+            "rc-fiche-discipline": "Taaluma", "rc-fiche-discipline-value": "Sheria",
+            "rc-fiche-contact": "Mawasiliano ya jumla"
+        },
+        ar: {
+            accueil: "الرئيسية", apropos: "حول", revue: "RADCom/AJCL",
+            ressources: "الموارد", mediatheque: "مكتبة الوسائط", bibliotheque: "المكتبة",
+            blog: "مدونة", evenements: "الفعاليات", "evenements-permanents": "دائمة",
+            "evenements-occasionnels": "مناسبات", initiatives: "المبادرات", projets: "المشاريع",
+            formations: "التدريب", communaute: "المجتمع", adhesion: "العضوية",
+            "galerie-communautaristes": "معرض المجتمع", contact: "اتصال", langue: "اللغة",
+
+            "footer-coordonnees-title": "معلومات الاتصال",
+            "footer-address": "المقر: دوالا-أكوا، مبنى PMUC القديم",
+            "footer-phone": "الهاتف: +237 654 807 793",
+            "footer-links-title": "روابط سريعة",
+            "footer-link-presentation": "عرض",
+            "footer-link-textes": "النصوص التأسيسية",
+            "footer-link-organisation": "المنظمة",
+            "footer-link-recherche": "البحث والمجلة",
+            "footer-link-adhesion": "العضوية",
+            "footer-link-partenariats": "شراكات",
+            "contact-social-title": "تابعنا",
+            "footer-bottom": "© 2026 SADC-ASCL. جميع الحقوق محفوظة.",
+
+            cera: "مركز الدراسات الإقليمية الأفريقية (CERA-BF)",
+            apcpa: "جمعية تعزيز المشتريات العامة في أفريقيا",
+            irdeic: "معهد البحث في القانون الأوروبي والدولي والمقارن (IRDEIC)",
+
+            "rc-hero-subtitle": "المجلة الأفريقية للقانون المجتمعي",
+            "rc-hero-tagline": "من أجل أفريقيا متكاملة عبر القانون",
+            "rc-hero-issn": "رقم ISSN قيد الإسناد",
+
+            "rc-breadcrumb-accueil": "الرئيسية",
+            "rc-breadcrumb-revues": "المجلات",
+
+            "rc-tab-apropos": "حول",
+            "rc-tab-numeros": "الأعداد",
+            "rc-tab-documents": "الوثائق التحريرية",
+            "rc-tab-comite": "هيئة التحرير",
+
+            "rc-apropos-text": "المجلة الأفريقية للقانون المجتمعي هي الجهاز العلمي للجمعية الأفريقية للقانون المجتمعي (SADC). أُنشئت عام 2022 من قبل الدكتور أوجين نكيلي مبيدا، وتنشر عددها الافتتاحي عام 2026، بواقع عددين منتظمين في السنة. كما تعتزم تطوير مجموعة أعداد خاصة. تهدف المجلة إلى توثيق البحث وممارسة القانون المجتمعي في أفريقيا وفي العالم. بصفتها أول مجلة متخصصة في القانون المجتمعي في القارة الأفريقية، تنشر نصوصًا أساسًا بالفرنسية والإنجليزية، لكنها تقبل نصوصًا بالإسبانية والعربية والسواحلية. تشكل RADCom أيضًا جسرًا بين مختلف الأفريقيات (الناطقة بالإنجليزية والعربية والفرنسية والبرتغالية والإسبانية...) وبوابة لتجارب الاندماج الجارية في قارات أخرى.",
+            "rc-apropos-contact": "الجمعية الأفريقية للقانون المجتمعي<br>مبنى PMUC القديم، دوالا 1، أكوا، الكاميرون<br><a href='mailto:radcom.ajcl@sadc-ascl.com'>radcom.ajcl@sadc-ascl.com</a><br><a href='mailto:arsene1eko@sadc-ascl.com'>arsene1eko@sadc-ascl.com</a>",
+
+            "rc-history-heading": "تاريخ المجلة",
+            "rc-history-callout": "المجلة الأفريقية للقانون المجتمعي في مرحلة الإطلاق. ستظهر الأعداد تباعًا مع اعتماد المنشورات من قبل اللجنة العلمية.",
+            "rc-issue-title": "المجلة الأفريقية للقانون المجتمعي (RADCom / AJCL)",
+            "rc-issue-author": "المؤلف: Eugène NKILI MBIDA",
+            "rc-issue-date": "التاريخ: 2026",
+            "rc-coming-soon-title": "قريبًا",
+            "rc-coming-soon-text": "ستُنشر الأعداد القادمة هنا فور صدورها.",
+
+            "rc-doc-intro": "وثائق مرجعية للمؤلفين والمقيّمين وقراء RADCom / AJCL.",
+            "rc-doc-titlepage": "صفحة العنوان المنفصلة",
+            "rc-doc-editorial-policy": "السياسة التحريرية",
+            "rc-doc-review-procedure": "إجراءات التقييم",
+            "rc-doc-ethics": "مدونة الأخلاقيات والدورية",
+            "rc-doc-guidelines": "إرشادات التأليف",
+            "rc-doc-btn-fr": "تحميل (بالفرنسية)",
+            "rc-doc-btn-en": "تحميل (بالإنجليزية)",
+
+            "rc-comite-intro": "تُدار مجلة RADCom / AJCL من قبل الهيئات التالية، وفقًا لبطاقتها الفنية.",
+            "rc-comite-direction-title": "إدارة النشر",
+            "rc-comite-secretariat-title": "الأمانة الفنية",
+            "rc-comite-scientifique-title": "اللجنة العلمية",
+            "rc-comite-redaction-title": "هيئة التحرير",
+            "rc-comite-president-label": "الرئيس:",
+
+            "rc-side-dernier-numero": "العدد الأخير",
+            "rc-side-explorer": "استكشاف",
+            "rc-side-search-placeholder": "ابحث في المجلة…",
+            "rc-side-index-auteurs": "فهرس المؤلفين",
+            "rc-side-blog-link": "المدونة والأخبار",
+            "rc-side-site-web": "الموقع الإلكتروني SADC-ASCL",
+            "rc-side-fiche": "البطاقة الفنية",
+            "rc-side-reseaux": "على وسائل التواصل الاجتماعي",
+            "rc-side-partenaires": "الشركاء",
+
+            "rc-fiche-peer": "تحكيم علمي", "rc-fiche-peer-value": "نعم (تحكيم مزدوج التعمية)",
+            "rc-fiche-apc": "رسوم النشر (APC)", "rc-fiche-apc-value": "لا",
+            "rc-fiche-access": "سياسة الوصول", "rc-fiche-access-value": "متاحة بالوصول الحر",
+            "rc-fiche-archive": "الأرشفة الرقمية", "rc-fiche-archive-value": "نعم",
+            "rc-fiche-direction": "إدارة النشر",
+            "rc-fiche-secretariat": "الأمانة الفنية",
+            "rc-fiche-sci-president": "رئيس اللجنة العلمية",
+            "rc-fiche-red-president": "رئيس هيئة التحرير",
+            "rc-fiche-editeur": "الناشر", "rc-fiche-editeur-value": "الجمعية الأفريقية للقانون المجتمعي",
+            "rc-fiche-issn": "ISSN", "rc-fiche-issn-value": "قيد الإسناد",
+            "rc-fiche-frequence": "وتيرة النشر", "rc-fiche-frequence-value": "عددان في السنة",
+            "rc-fiche-periode": "فترة النشر", "rc-fiche-periode-value": "2026 – (مستمرة)",
+            "rc-fiche-support": "نوع الوسيط", "rc-fiche-support-value": "رقمي",
+            "rc-fiche-langues": "اللغات", "rc-fiche-langues-value": "الفرنسية والإنجليزية (أساسًا)، العربية، الإسبانية، السواحلية",
+            "rc-fiche-discipline": "التخصص", "rc-fiche-discipline-value": "القانون",
+            "rc-fiche-contact": "التواصل العام"
+        }
+    };
+
+    function setLanguage(lang) {
+        var dict = rqDict[lang] || rqDict.fr;
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n');
+            if (key && dict[key] !== undefined) {
+                el.innerHTML = dict[key];
+            }
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n-placeholder');
+            if (key && dict[key] !== undefined) {
+                el.setAttribute('placeholder', dict[key]);
+            }
+        });
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        setLanguage('fr');
+
+        document.querySelectorAll('.rq-tab').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.rq-tab').forEach(function (b) { b.classList.remove('active'); });
+                document.querySelectorAll('.rq-panel').forEach(function (p) { p.classList.remove('active'); });
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.target).classList.add('active');
+            });
+        });
+    });
+    </script>
 
 </body>
 </html>
