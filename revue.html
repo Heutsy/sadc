@@ -66,6 +66,8 @@
             padding-left: 14px;
         }
         .rq-credits strong { color: #FFD700; font-weight: 600; }
+        .rq-credits ul { margin: 4px 0 12px; padding-left: 18px; }
+        .rq-credits li { margin-bottom: 2px; }
 
         /* --- Onglets --- */
         .rq-tabs {
@@ -293,6 +295,7 @@
             margin: 2px 0 0;
         }
         .rq-fiche dd a { color: #FFD700; }
+        .rq-fiche dd ul { margin: 2px 0 0; padding-left: 18px; }
 
         .rq-partners-list { list-style: none; padding: 0; margin: 0; }
         .rq-partners-list li {
@@ -403,13 +406,13 @@
 
                     <div class="rq-identity">
                         <div class="rq-brand">RADCom / AJCL</div>
-                        <p class="rq-subtitle-lang">Revue Africaine de Droit Communautaire</p>
-                        <p class="rq-subtitle-lang">African Journal of Community Law</p>
-                        <p class="rq-tagline">Pour une Afrique intégrée par le Droit — For an Africa United through Law</p>
+                        <p class="rq-subtitle-lang" data-i18n="rc-identity-name-fr">Revue Africaine de Droit Communautaire</p>
+                        <p class="rq-subtitle-lang" data-i18n="rc-identity-name-en">African Journal of Community Law</p>
+                        <p class="rq-tagline" data-i18n="rc-hero-tagline">Pour une Afrique intégrée par le droit</p>
                     </div>
 
                     <div class="rq-credits">
-                        <strong>Direction :</strong> <br>
+                        <strong data-i18n="rc-comite-direction-title">Direction de publication</strong>
                         <ul>
                             <li>Eugène NKILI MBIDA</li>
                             <li>Sanae BOUYAYACHEN</li>
@@ -419,7 +422,7 @@
                             <li>Arsène Silvère EKO MENGUE</li>
                             <li>Béhibro Jean-Jaurès KOUASSI</li>
                         </ul>
-                        <strong>Éditeur :</strong> <br> 
+                        <strong data-i18n="rc-fiche-editeur">Éditeur</strong>
                         <ul>
                             <li>Société Africaine de Droit Communautaire (SADC-ASCL)</li>
                         </ul>
@@ -430,7 +433,7 @@
                         <button class="rq-tab" data-target="rq-apropos" type="button" data-i18n="rc-tab-apropos">À propos</button>
                         <button class="rq-tab active" data-target="rq-numeros" type="button" data-i18n="rc-tab-numeros">Numéros</button>
                         <button class="rq-tab" data-target="rq-documents" type="button" data-i18n="rc-tab-documents">Documents éditoriaux</button>
-                        <button class="rq-tab" data-target="rq-comite" type="button" data-i18n="rc-tab-comite">Comité de rédaction</button>
+                        <button class="rq-tab" data-target="rq-comite" type="button" data-i18n="rc-tab-comite">Organes éditoriaux</button>
                     </div>
 
                     <!-- Panneau : À propos (texte officiel "Texte de la rubrique A propos") -->
@@ -515,9 +518,9 @@
                         </div>
                     </div>
 
-                    <!-- Panneau : Comité de rédaction (issu de la Fiche RADCom) -->
+                    <!-- Panneau : Organes éditoriaux (issu de la Fiche RADCom) -->
                     <div class="rq-panel" id="rq-comite">
-                        <h3 data-i18n="rc-tab-comite">Comité de rédaction</h3>
+                        <h3 data-i18n="rc-tab-comite">Organes éditoriaux</h3>
                         <p class="rq-intro-text" data-i18n="rc-comite-intro">La RADCom / AJCL est animée par les organes suivants, conformément à sa fiche technique.</p>
                         <div class="rq-comite-grid">
                             <div class="rq-comite-item">
@@ -604,9 +607,6 @@
                                     <li>Béhibro Jean-Jaurès KOUASSI</li>
                                 </ul>
                             </dd>
-
-                            
-
 
                             <dt data-i18n="rc-comite-scientifique-title">Comité Scientifique</dt>
                             <dd class="rq-president-line"><span data-i18n="rc-comite-president-label" style="color: #ccc;">Président :</span> Alioune SALL</dd> 
@@ -753,13 +753,16 @@
             "rc-hero-tagline": "Pour une Afrique intégrée par le droit",
             "rc-hero-issn": "Numéro ISSN en cours d'attribution",
 
+            "rc-identity-name-fr": "Revue Africaine de Droit Communautaire",
+            "rc-identity-name-en": "African Journal of Community Law",
+
             "rc-breadcrumb-accueil": "Accueil",
             "rc-breadcrumb-revues": "Revues",
 
             "rc-tab-apropos": "À propos",
             "rc-tab-numeros": "Numéros",
             "rc-tab-documents": "Documents éditoriaux",
-            "rc-tab-comite": "Comité de rédaction",
+            "rc-tab-comite": "Organes éditoriaux",
 
             "rc-apropos-text": "La Revue Africaine de Droit Communautaire est l'organe scientifique de la Société Africaine de Droit Communautaire (SADC). Créée en 2022 par le Dr. Eugène NKILI MBIDA, elle publie son numéro inaugural en 2026, et deux numéros réguliers par année. Elle entend développer également une collection hors-série. La Revue a pour mission de rendre compte de la recherche et de la pratique du droit communautaire en Afrique, et dans le monde. Première revue spécialisée en droit communautaire sur le continent africain, elle publie des textes principalement en français et en anglais, mais accepte des textes en espagnol, en arabe et en swahili. La RADCom constitue également un pont entre les différentes Afriques (anglophone, arabophone, francophone, lusophone, hispanophone…) et une porte d'entrée pour les expériences d'intégration qui ont cours sur d'autres continents.",
             "rc-apropos-contact": "Société Africaine de Droit Communautaire<br>Immeuble Ancien PMUC, Douala 1er, Akwa, Cameroun<br><a href='mailto:radcom.ajcl@sadc-ascl.com'>radcom.ajcl@sadc-ascl.com</a><br><a href='mailto:arsene1eko@sadc-ascl.com'>arsene1eko@sadc-ascl.com</a>",
@@ -844,13 +847,16 @@
             "rc-hero-tagline": "For an Africa United through Law",
             "rc-hero-issn": "ISSN number: being assigned",
 
+            "rc-identity-name-fr": "Revue Africaine de Droit Communautaire",
+            "rc-identity-name-en": "African Journal of Community Law",
+
             "rc-breadcrumb-accueil": "Home",
             "rc-breadcrumb-revues": "Journals",
 
             "rc-tab-apropos": "About",
             "rc-tab-numeros": "Issues",
             "rc-tab-documents": "Editorial documents",
-            "rc-tab-comite": "Editorial board",
+            "rc-tab-comite": "Editorial bodies",
 
             "rc-apropos-text": "The African Journal of Community Law is the scientific organ of the African Society of Community Law (ASCL). Created in 2022 by Dr Eugène NKILI MBIDA, it publishes its inaugural issue in 2026, and two regular issues per year. It also intends to develop a special edition collection. The Journal's mission is to report on the research and practice of community law in Africa, and around the world. The first specialized journal in Africa, it publishes texts mainly in French and English, but accepts texts in Spanish, Arabic and Swahili. The AJCL is also a bridge between the different Africas (English, Arabic, French, Portuguese, Spanish speaking...) and a gateway for integration experiences that are taking place on other continents.",
             "rc-apropos-contact": "African Society of Community Law<br>Ancien Immeuble PMUC, Douala 1st, Akwa, Cameroon<br><a href='mailto:radcom.ajcl@sadc-ascl.com'>radcom.ajcl@sadc-ascl.com</a><br><a href='mailto:arsene1eko@sadc-ascl.com'>arsene1eko@sadc-ascl.com</a>",
@@ -935,13 +941,16 @@
             "rc-hero-tagline": "Kwa Afrika iliyounganishwa kupitia Sheria",
             "rc-hero-issn": "Nambari ya ISSN inasubiri kutolewa",
 
+            "rc-identity-name-fr": "Revue Africaine de Droit Communautaire",
+            "rc-identity-name-en": "African Journal of Community Law",
+
             "rc-breadcrumb-accueil": "Nyumbani",
             "rc-breadcrumb-revues": "Majarida",
 
             "rc-tab-apropos": "Kuhusu",
             "rc-tab-numeros": "Matoleo",
             "rc-tab-documents": "Nyaraka za Uhariri",
-            "rc-tab-comite": "Bodi ya Uhariri",
+            "rc-tab-comite": "Vyombo vya Uhariri",
 
             "rc-apropos-text": "Jarida la Kiafrika la Sheria ya Jumuiya ni chombo cha kisayansi cha Jumuiya ya Kiafrika ya Sheria ya Jumuiya (SADC). Lilianzishwa mwaka 2022 na Dkt. Eugène NKILI MBIDA, litachapisha toleo lake la kwanza mwaka 2026, na matoleo mawili ya kawaida kila mwaka. Pia linakusudia kuendeleza mkusanyiko maalum wa matoleo. Lengo la Jarida ni kutoa taarifa kuhusu utafiti na matumizi ya sheria ya jumuiya barani Afrika, na duniani kote. Likiwa jarida la kwanza maalumu la sheria ya jumuiya katika bara la Afrika, huchapisha maandishi hasa kwa Kifaransa na Kiingereza, lakini hukubali maandishi kwa Kihispania, Kiarabu na Kiswahili. RADCom pia ni daraja kati ya Afrika mbalimbali (zinazozungumza Kiingereza, Kiarabu, Kifaransa, Kireno, Kihispania…) na lango la uzoefu wa ujumuishaji unaoendelea katika mabara mengine.",
             "rc-apropos-contact": "Jumuiya ya Kiafrika ya Sheria ya Jumuiya<br>Jengo la Zamani la PMUC, Douala ya 1, Akwa, Kameruni<br><a href='mailto:radcom.ajcl@sadc-ascl.com'>radcom.ajcl@sadc-ascl.com</a><br><a href='mailto:arsene1eko@sadc-ascl.com'>arsene1eko@sadc-ascl.com</a>",
@@ -1026,13 +1035,16 @@
             "rc-hero-tagline": "من أجل أفريقيا متكاملة عبر القانون",
             "rc-hero-issn": "رقم ISSN قيد الإسناد",
 
+            "rc-identity-name-fr": "Revue Africaine de Droit Communautaire",
+            "rc-identity-name-en": "African Journal of Community Law",
+
             "rc-breadcrumb-accueil": "الرئيسية",
             "rc-breadcrumb-revues": "المجلات",
 
             "rc-tab-apropos": "حول",
             "rc-tab-numeros": "الأعداد",
             "rc-tab-documents": "الوثائق التحريرية",
-            "rc-tab-comite": "هيئة التحرير",
+            "rc-tab-comite": "الهيئات التحريرية",
 
             "rc-apropos-text": "المجلة الأفريقية للقانون المجتمعي هي الجهاز العلمي للجمعية الأفريقية للقانون المجتمعي (SADC). أُنشئت عام 2022 من قبل الدكتور أوجين نكيلي مبيدا، وتنشر عددها الافتتاحي عام 2026، بواقع عددين منتظمين في السنة. كما تعتزم تطوير مجموعة أعداد خاصة. تهدف المجلة إلى توثيق البحث وممارسة القانون المجتمعي في أفريقيا وفي العالم. بصفتها أول مجلة متخصصة في القانون المجتمعي في القارة الأفريقية، تنشر نصوصًا أساسًا بالفرنسية والإنجليزية، لكنها تقبل نصوصًا بالإسبانية والعربية والسواحلية. تشكل RADCom أيضًا جسرًا بين مختلف الأفريقيات (الناطقة بالإنجليزية والعربية والفرنسية والبرتغالية والإسبانية...) وبوابة لتجارب الاندماج الجارية في قارات أخرى.",
             "rc-apropos-contact": "الجمعية الأفريقية للقانون المجتمعي<br>مبنى PMUC القديم، دوالا 1، أكوا، الكاميرون<br><a href='mailto:radcom.ajcl@sadc-ascl.com'>radcom.ajcl@sadc-ascl.com</a><br><a href='mailto:arsene1eko@sadc-ascl.com'>arsene1eko@sadc-ascl.com</a>",
